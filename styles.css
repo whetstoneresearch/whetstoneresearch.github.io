@@ -65,10 +65,9 @@
 
   .text {
     line-height: 1.6;
-    font-size: 12px;
+    font-size: 16px;
     padding: 0 10px;
     font-weight: normal;
-    margin: 60px auto;
     max-width: 700px;
   }
   
