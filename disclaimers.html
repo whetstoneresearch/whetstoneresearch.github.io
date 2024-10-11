@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+    <link rel="icon" href="favicon.ico" type="images/x-icon">
+
+    <title>Doppler</title>
+    <meta name="description" content="">
+    
+    <style>
+        html {
+            display: table;
+            margin: auto;
+        }
+
+        body {
+            background-color: #f0eff7;
+            color: black;
+            font-family: "Times New Roman";
+            margin: 0;
+            padding: 10px;
+            height: 100%;
+            flex-direction: column;
+            font-size: 1em;
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        .logo-line {
+            display: flex;
+            font-size: 1.4em;
+            white-space: pre;
+            vertical-align: middle;
+            justify-content: center; 
+        }
+
+        .horizontal-logo-symbol {
+            opacity: 0;
+        }
+
+        .section-title {
+            padding-bottom: 10px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        .text {
+            line-height: 1.25;
+            font-size: 16px;
+            padding: 0 10px;
+            font-weight: normal;
+            margin: auto;
+            max-width: 700px;
+        }
+
+        @keyframes fadeInOut {
+            0% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+        a:visited {
+            color: #180976;
+        }
+        .animate {
+            animation: fadeInOut 3s 1; /* Adjust the duration as needed */
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="logo-line">
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+    </div>
+    <div class="logo-line">
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+    </div>
+    <div class="logo-line">
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+    </div>
+    <div class="logo-line">
+        <span> </span>
+        <span> </span>
+        <span> </span>
+        <span> </span>
+        <span> </span>
+        <span> </span>
+        <span> </span>
+        <span> </span>
+        <span> </span>
+        <span> </span>
+        <span> </span>
+        <span> </span>
+        <span> </span>
+        <span> </span>
+        <span> </span>
+        <span> </span>
+        <span> </span>
+        <span> </span>
+        <span> </span>
+        <span> </span>
+        <span> </span>
+        <span> </span>
+        <span> </span>
+        <span> </span>
+        <span> </span>
+        <span> </span>
+        <span> </span>
+        <span> </span>
+        <span> </span>
+    </div>
+    <div class="logo-line">
+        <span class="vertical-logo-symbol"> </span>
+        <span class="vertical-logo-symbol"> </span>
+        <span class="vertical-logo-symbol"> </span>
+        <span class="vertical-logo-symbol"> </span>
+        <span class="vertical-logo-symbol"> </span>
+        <span class="vertical-logo-symbol"> </span>
+        <span class="vertical-logo-symbol"> </span>
+        <span class="vertical-logo-symbol"> </span>
+        <span class="vertical-logo-symbol"> </span>
+        <span class="vertical-logo-symbol"> </span>
+        <span class="vertical-logo-symbol"> </span>
+        <span class="vertical-logo-symbol"> </span>
+        <span > </span>
+        <span class="logo-text"> Doppler </span>
+        <span> </span>
+        <span class="vertical-logo-symbol"> </span>
+        <span class="vertical-logo-symbol"> </span>
+        <span class="vertical-logo-symbol"> </span>
+        <span class="vertical-logo-symbol"> </span>
+        <span class="vertical-logo-symbol"> </span>
+        <span class="vertical-logo-symbol"> </span>
+        <span class="vertical-logo-symbol"> </span>
+        <span class="vertical-logo-symbol"> </span>
+        <span class="vertical-logo-symbol"> </span>
+        <span class="vertical-logo-symbol"> </span>
+        <span class="vertical-logo-symbol"> </span>
+        <span class="vertical-logo-symbol"> </span>
+    </div>
+    <div class="logo-line">
+        <span> </span>
+        <span> </span>
+        <span> </span>
+        <span> </span>
+        <span> </span>
+        <span> </span>
+        <span> </span>
+        <span> </span>
+        <span> </span>
+        <span> </span>
+        <span> </span>
+        <span> </span>
+        <span> </span>
+        <span> </span>
+        <span> </span>
+        <span> </span>
+        <span> </span>
+        <span> </span>
+        <span> </span>
+        <span> </span>
+        <span> </span>
+        <span> </span>
+        <span> </span>
+        <span> </span>
+        <span> </span>
+        <span> </span>
+        <span> </span>
+        <span> </span>
+        <span> </span>
+    </div>
+    <div class="logo-line">
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+    </div>
+    <div class="logo-line">
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+    </div>
+    <div class="logo-line">
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+        <span class="horizontal-logo-symbol"> </span>
+    </div>
+    <br>
+    <div class="section-title">* Disclaimers</div>
+    <p class = "text">
+        No Legal, Financial, or Investment Advice. This post does not constitute legal advice, financial advice, investment
+        advice, trading advice, or a recommendation of any kind by Local Group, Inc., Doppler, its affiliates, or any of their
+        respective officers, directors, managers, employees, agents, advisors, or consultants. No information contained
+        herein should be relied upon as the basis for any investment decision, contract, or any other decision regarding
+        engagement with Doppler or any of its projects.
+
+        <br><br>
+        No Representations or Warranties. The information contained in this post is provided &quot;as is&quot; and without warranties
+        of any kind, either express or implied. Doppler makes no representations or warranties of any kind regarding the
+        accuracy, completeness, or reliability of the information, opinions, or projections contained in this document, or of any
+        omissions from it. Any forward-looking statements or projections of future events, business outcomes, or market
+        performance are inherently uncertain and involve risks. Doppler disclaims all liability for any losses or damages
+        arising from any use or reliance on this document, regardless of whether such losses were foreseeable or whether
+        Doppler was advised of the possibility of such losses to the fullest extent permitted by law.
+        <br><br>
+
+        Third-Party Data. This post may reference data or information sourced from third parties. While Doppler believes
+        such third-party data to be accurate and reliable, it has not been independently verified by Doppler, nor audited or
+        subject to professional scrutiny by legal, financial, or technical experts. No representation or warranty is made as to
+        the accuracy, completeness, or reliability of any third-party information included in this post.
+        Third-Party References. References to third-party companies, networks, technologies, or use cases in this post are
+        provided for illustrative purposes only. Such references should not be interpreted as an endorsement, critique,
+        affiliation, or recommendation by or of any third party. Additionally, unless otherwise stated, all monetary references
+        to &quot;dollars,&quot; &quot;USD,&quot; or &quot;$&quot; refer to United States Dollars.
+        <br><br>
+        
+        Risk Disclosure. The regulatory treatment of tokens and digital assets remains uncertain and varies across
+        jurisdictions. Future legal, regulatory, or policy developments could impact the acquisition, ownership, transfer, and
+        use of digital assets and digital asset platforms. Digital assets and associated technologies carry inherent risks, and
+        readers are strongly encouraged to perform their own independent analysis and consult with professional advisors
+        prior to making any investment, legal, trading, or financial decision.
+        <br><br>
+        
+        Forward-Looking Statements. This post may contain forward-looking statements based on assumptions and beliefs
+        of Doppler, its officers, or its affiliates. These statements are subject to known and unknown risks, uncertainties, and
+        other factors, many of which are outside Doppler&#39;s control, that may cause actual outcomes to differ materially from
+        the projections or expectations set forth in such statements. Doppler makes no obligation to update or revise any
+        forward-looking statements to reflect subsequent events, developments, or changes in circumstances after the date
+        on which such statements were made, except as required by law.
+    </p>
+    <br>
+
+    <script>
+        // inspired by https://commonware.xyz/
+        const horizontalSymbols = ["*"];
+    
+        function getRandomItem(arr) {
+            if (Math.random() > 0.95) {
+                return arr[Math.floor(Math.random() * arr.length)];
+            }
+            return " "
+        }
+
+        function getRandomDuration(min) {
+            return Math.random() * (10000 - min) + min;
+        }
+
+        function updateSymbol(symbol, choices) {
+            symbol.innerText = getRandomItem(choices);
+            symbol.classList.remove('animate'); // Remove the animation class first
+            void symbol.offsetWidth; // Trigger reflow to restart the animation
+            symbol.classList.add('animate'); // Re-add the animation class
+
+            setTimeout(() => updateSymbol(symbol, choices), getRandomDuration(4000));
+        }
+
+        document.querySelectorAll('.horizontal-logo-symbol').forEach(symbol => {
+            setTimeout(() => updateSymbol(symbol, horizontalSymbols), getRandomDuration(3000));
+        });
+    </script>
+</body>
+
+</html>
