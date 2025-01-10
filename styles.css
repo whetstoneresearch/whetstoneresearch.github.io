@@ -1,101 +1,57 @@
-.title {
-    text-align: center;
-    font-size: 40px;
-    margin-bottom: 0.2em;
-  }
-  
-  .subtitle {
-    text-align: center;
-    font-size: medium;
-    font-weight: bold;
-    margin-top: 0;
-  }
-  
-  body {
-    line-height: 1.6;
-    font-size: 18px;
-    padding: 0 10px;
-    margin: 60px auto;
-    max-width: 700px;
-    background: #f0eff7;
-  }
-  
-  h2,
-  h2,
-  h3 {
-    line-height: 1.2;
-  }
-  
-  h2 {
-    font-size: 18px;
-  }
-  
-  a:link,
-  a:visited {
-    color: #180976;
-  }
-  
-  code,
-  .code {
-    font-family: "Times New Roman";
-    font-size: 1.125rem;
-    line-height: 1.6;
-    padding: 0;
-    padding-top: 0;
-    padding-bottom: 0;
-    margin: 0;
-    font-size: 85%;
-    background-color: rgba(0, 0, 0, 0.04);
-    border-radius: 3px;
-  }
-  .subtitle {
-    text-align: center;
-    font-size: medium;
-    font-weight: bold;
-    margin-top: 0;
-  }
-  
-  body {
-    line-height: 1.6;
-    font-size: 18px;
-    padding: 0 10px;
-    margin: 60px auto;
-    max-width: 700px;
-  }
+/* Base styles */
+body {
+  line-height: 1.6;
+  font-size: 18px;
+  padding: 0 10px;
+  margin: 60px auto;
+  max-width: 700px;
+  background: #f0eff7;
+}
 
-  .text {
-    line-height: 1.1;
-    font-size: 17px;
-    padding: 0 10px;
-    font-weight: normal;
-    max-width: 700px;
-  }
-  
-  h2,
-  h2,
-  h3 {
-    line-height: 1.2;
-  }
-  
-  h2 {
-    font-size: 18px;
-  }
-  
-  a:link,
-  a:visited {
-    color: #180976;
-  }
-  
-  code,
-  .code {
-    font-family: "Times New Roman";
-    font-size: 1.125rem;
-    line-height: 1.6;
-    padding: 0;
-    padding-top: 0;
-    padding-bottom: 0;
-    margin: 0;
-    font-size: 85%;
-    background-color: rgba(0, 0, 0, 0.04);
-    border-radius: 3px;
-  }
+/* Typography */
+h2, h3 {
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 18px;
+}
+
+.title {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 0.2em;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: medium;
+  font-weight: bold;
+  margin-top: 0;
+}
+
+.text {
+  line-height: 1.1;
+  font-size: 17px;
+  padding: 0 10px;
+  font-weight: normal;
+  max-width: 700px;
+}
+
+/* Links */
+a:link,
+a:visited {
+  color: #180976;
+}
+
+/* Code blocks */
+code,
+.code {
+  font-family: "Times New Roman";
+  font-size: 85%;
+  line-height: 1.6;
+  padding: 0;
+  margin: 0;
+  background-color: rgba(0, 0, 0, 0.04);
+  border-radius: 3px;
+}
