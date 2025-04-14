@@ -2,460 +2,502 @@
 <html lang="en">
 
 <head>
-    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
-    <link rel="icon" href="images/favicon.ico" type="images/x-icon">
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+  <link rel="icon" href="images/favicon.ico" type="images/x-icon">
 
-    <title>Doppler</title>
-    <meta name="description" content="">
-    
-    <style>
-        html {
-            display: table;
-            margin: auto;
-        }
+  <title>Doppler</title>
+  <meta name="description" content="">
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="435b33ab-c4e3-4b5a-aec5-6cbf5311c08c"></script>
 
-        body {
-            background-color: #f0eff7;
-            color: black;
-            font-family: "Times New Roman";
-            margin: 0;
-            padding: 10px;
-            height: 100%;
-            flex-direction: column;
-            font-size: 1em;
-            display: table-cell;
-            vertical-align: middle;
-        }
+  <style>
+    html {
+      display: table;
+      margin: auto;
+    }
 
-        .logo-line {
-            display: flex;
-            font-size: 1.4em;
-            white-space: pre;
-            vertical-align: middle;
-            justify-content: center; 
-        }
+    body {
+      background-color: #f0eff7;
+      color: black;
+      font-family: "Times New Roman";
+      margin: 0;
+      padding: 10px;
+      height: 100%;
+      flex-direction: column;
+      font-size: 1em;
+      display: table-cell;
+      vertical-align: middle;
+    }
 
-        .horizontal-logo-symbol {
-            opacity: 0;
-        }
+    .logo-line {
+      display: flex;
+      font-size: 1.4em;
+      white-space: pre;
+      vertical-align: middle;
+      justify-content: center;
+    }
 
-        .section-title {
-            padding-bottom: 10px;
-            font-weight: bold;
-            font-size: 18px;
-        }
-        
-        .text {
-            line-height: 1.25;
-            font-size: 16px;
-            padding: 0 10px;
-            font-weight: normal;
-            margin: auto;
-            max-width: 700px;
-        }
+    .horizontal-logo-symbol {
+      opacity: 0;
+    }
 
-        @keyframes fadeInOut {
-            0% {
-                opacity: 0;
-            }
-            50% {
-                opacity: 1;
-            }
-            100% {
-                opacity: 0;
-            }
-        }
-        a:visited {
-            color: #180976;
-        }
-        .animate {
-            animation: fadeInOut 3s 1; /* Adjust the duration as needed */
-        }
+    .section-title {
+      padding-bottom: 10px;
+      font-weight: bold;
+      font-size: 18px;
+    }
 
-    </style>
+    .text {
+      line-height: 1.25;
+      font-size: 16px;
+      padding: 0 10px;
+      font-weight: normal;
+      margin: auto;
+      max-width: 700px;
+    }
+
+    @keyframes fadeInOut {
+      0% {
+        opacity: 0;
+      }
+
+      50% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 0;
+      }
+    }
+
+    a:visited {
+      color: #180976;
+    }
+
+    .animate {
+      animation: fadeInOut 3s 1;
+      /* Adjust the duration as needed */
+    }
+  </style>
 </head>
 
 <body>
-    <div class="logo-line">
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-    </div>
-    <div class="logo-line">
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-    </div>
-    <div class="logo-line">
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-    </div>
-    <div class="logo-line">
-        <span> </span>
-        <span> </span>
-        <span> </span>
-        <span> </span>
-        <span> </span>
-        <span> </span>
-        <span> </span>
-        <span> </span>
-        <span> </span>
-        <span> </span>
-        <span> </span>
-        <span> </span>
-        <span> </span>
-        <span> </span>
-        <span> </span>
-        <span> </span>
-        <span> </span>
-        <span> </span>
-        <span> </span>
-        <span> </span>
-        <span> </span>
-        <span> </span>
-        <span> </span>
-        <span> </span>
-        <span> </span>
-        <span> </span>
-        <span> </span>
-        <span> </span>
-        <span> </span>
-    </div>
-    <div class="logo-line">
-        <span class="vertical-logo-symbol"> </span>
-        <span class="vertical-logo-symbol"> </span>
-        <span class="vertical-logo-symbol"> </span>
-        <span class="vertical-logo-symbol"> </span>
-        <span class="vertical-logo-symbol"> </span>
-        <span class="vertical-logo-symbol"> </span>
-        <span class="vertical-logo-symbol"> </span>
-        <span class="vertical-logo-symbol"> </span>
-        <span class="vertical-logo-symbol"> </span>
-        <span class="vertical-logo-symbol"> </span>
-        <span class="vertical-logo-symbol"> </span>
-        <span class="vertical-logo-symbol"> </span>
-        <span > </span>
-        <span class="logo-text"> Doppler </span>
-        <span> </span>
-        <span class="vertical-logo-symbol"> </span>
-        <span class="vertical-logo-symbol"> </span>
-        <span class="vertical-logo-symbol"> </span>
-        <span class="vertical-logo-symbol"> </span>
-        <span class="vertical-logo-symbol"> </span>
-        <span class="vertical-logo-symbol"> </span>
-        <span class="vertical-logo-symbol"> </span>
-        <span class="vertical-logo-symbol"> </span>
-        <span class="vertical-logo-symbol"> </span>
-        <span class="vertical-logo-symbol"> </span>
-        <span class="vertical-logo-symbol"> </span>
-        <span class="vertical-logo-symbol"> </span>
-    </div>
-    <div class="logo-line">
-        <span> </span>
-        <span> </span>
-        <span> </span>
-        <span> </span>
-        <span> </span>
-        <span> </span>
-        <span> </span>
-        <span> </span>
-        <span> </span>
-        <span> </span>
-        <span> </span>
-        <span> </span>
-        <span> </span>
-        <span> </span>
-        <span> </span>
-        <span> </span>
-        <span> </span>
-        <span> </span>
-        <span> </span>
-        <span> </span>
-        <span> </span>
-        <span> </span>
-        <span> </span>
-        <span> </span>
-        <span> </span>
-        <span> </span>
-        <span> </span>
-        <span> </span>
-        <span> </span>
-    </div>
-    <div class="logo-line">
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-    </div>
-    <div class="logo-line">
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-    </div>
-    <div class="logo-line">
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-        <span class="horizontal-logo-symbol"> </span>
-    </div>
-    <br>
-    <div class="section-title">* tl;dr</div>
-    <p class = "text">
-        So much has changed and improved in the crypto space in the last decade, but one of the most persistent problems is pricing, sourcing, and sustaining onchain liquidity for new and existing projects.        <br><br>
-        <a href="https://github.com/whetstoneresearch/docs/blob/main/whitepapers/doppler/Dutch_auction_Dynamic_Bonding_Curves.pdf">Doppler</a> is a liquidity bootstrapping Protocol built on top of Uniswap v4. Doppler abstracts the challenges associated with Uniswap v4 integrations from integrators by executing the entire liquidity bootstrapping auction inside of the hook contract. 
-        The hook-enshrined auction is designed from first principles to minimize the cost of incorrect initialization prices, leading to more accurately priced liquidity with less drag. This is all while the auction is abstracted from the user via the current swapping user and builder experience.
-        Integrators benefit from a credibly-neutral, self-executing, automated, permissionless base layer while still capturing the lion's share of the value from their integrations via a protocol-enshrined integrator fee.
-        <br><br>
-    </p>
-    <br>
-    <div class="section-title">* Long form</div>
-    <p class = "text">
-        During this crypto cycle, there has been an explosion in liquidity apps, which aim to create unique user experiences driven by a liquidity layer like an AMM. This growth is driven by more abundant block space and better developer experience.
-        <br><br>
-        To date, liquidity apps have faced several notable challenges:
-        <br>
-
-        <ol>
-            <li>They require a time-consuming and difficult integration with a liquidity layer like the Uniswap Protocol, <br>slowing down experimentation and the race to product market fit.</li>
-            <li>These integrations leak significant value, which leads to catastrophic losses to users and token projects. <br>On Solana, this is <a href="https://x.com/0xngmi/status/1823399442306801974">over $400m to date</a> taken from token’s value.</li>
-            <li>The final integrations are opinionated, which discourages new apps from building on top of them. <br>This limits network effects and interoperability, two of the most powerful incentives in crypto-based markets.</li>
-          </ol>
-    </p>
-    <p class = "text">
-          To solve these problems, Whetstone Research designed and is creating the reference implementation for <a href="https://github.com/whetstoneresearch/docs/blob/main/whitepapers/doppler/Dutch_auction_Dynamic_Bonding_Curves.pdf">Doppler</a>. Doppler is a liquidity bootstrapping protocol, utilizing a “customizable AMM”, built on top of Uniswap v4. It is designed by a team of long-time Uniswap Protocol and onchain finance builders to support better economic outcomes for 
-          liquidity all while utilizing a permissionless, credibly-neutral, self-executing, and autonomous base layer for the next generation of liquidity apps.
-          <br><br>
-
-          Tokens utilizing Doppler will be tradeable on any Uniswap v4 swapping interface by default during the price discovery phase, 
-          utilizing the simple swapping primitive that users have come to know and love. The complex auction itself is abstracted 
-          from users/integrators and is fully and autonomously facilitated within the Uniswap v4 hook contract. The auction and hook logic were optimized 
-          from the ground up to work onchain, allowing users to get more liquidity for and keep more value in their tokens. 
-          <br><br>
-
-          Liquidity in the Protocol is generated solely from users swapping for the token. The Protocol does not require neither integrators nor users to provide any tokens except the allotment for liquidity provision. If the auction ends according to user-specified parameters,
-          the resulting liquidity will be sent to a generalized AMM (like Uniswap v2) to support long-term liquidity. Otherwise, users will be refunded a pro-rata share of the other token.
-          <br><br>
-
-          The public release will also include contracts and an SDK to support integrators with token deployment and integration with Doppler. 
-          <br><br>
-
-          The team at <a href ="/">Whetstone Research</a>, who designed Doppler, is providing an open-source interface for the Doppler Protocol 
-          to bootstrap a decentralized set of integrators. To sustain this, the Protocol is intentionally leaving significant value 
-          for integrators via a Protocol-enshrined “integrator fee”, similar to an “LP fee” in Uniswap Protocol. 
-          Integrators who utilize the Protocol can set an arbitrary but capped “Integrator fee”, 
-          which is captured by the integrator at the end of a successful bootstrapping process. 
-          This will allow arbitrary integrators to capture value they generate using the Protocol. 
-          <br><br>
-
-          A decentralized set of user interfaces is better long-term  for users and the Protocol and will allow liquidity apps 
-          to experiment more quickly and focus on building unique and interesting apps. At the same time, this setup enables sustainable teams to be incentivized to focus solely on the Protocol.
-          Some apps exist already and would benefit from Doppler are interfaces that create and swap memecoins, integrators using bonding curves to sell real world items, 
-          and protocols looking to create sustainable liquidity from their DAO’s token. We believe that apps will find even more interesting and novel ways to utilize the Protocol.
-          <br><br>
-
-          Deployed Doppler instances will be permissionless, allowing any integrators to use the Protocol. Any application building on top of the Protocol 
-          can use Doppler to create liquidity without an initial price. Since Doppler is built to allow gradual improvements without breaking, integrators will continually benefit 
-          from the work to continually push the base-layer forward.
-          <br><br>
-
-          Overall, Doppler abstracts the most difficult part away from liquidity apps integrating with the liquidity layers, 
-          allowing integrators to focus on building new experiences for users, while still capturing the value created by the integration. 
-          <br><br>
-
-          If you are interested in integrating or collaborating, reach out to <a href="mailto:contact@whetstone.cc">contact@whetstone.cc </a>, <a href="https://x.com/whetstonedotcc">@whetstonedotcc</a> on Twitter, 
-          or sign up <a href="https://paragraph.xyz/@whetstone">here</a> to be notified of the public release of the SDK, contracts, and integration docs. We are looking forward to seeing what everyone builds!
-          <br><br>
-
-          <a href="disclaimers.html">Disclaimers</a>
-
-    </p>
+  <div class="logo-line">
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+  </div>
+  <div class="logo-line">
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+  </div>
+  <div class="logo-line">
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+  </div>
+  <div class="logo-line">
+    <span> </span>
+    <span> </span>
+    <span> </span>
+    <span> </span>
+    <span> </span>
+    <span> </span>
+    <span> </span>
+    <span> </span>
+    <span> </span>
+    <span> </span>
+    <span> </span>
+    <span> </span>
+    <span> </span>
+    <span> </span>
+    <span> </span>
+    <span> </span>
+    <span> </span>
+    <span> </span>
+    <span> </span>
+    <span> </span>
+    <span> </span>
+    <span> </span>
+    <span> </span>
+    <span> </span>
+    <span> </span>
+    <span> </span>
+    <span> </span>
+    <span> </span>
+    <span> </span>
+  </div>
+  <div class="logo-line">
+    <span class="vertical-logo-symbol"> </span>
+    <span class="vertical-logo-symbol"> </span>
+    <span class="vertical-logo-symbol"> </span>
+    <span class="vertical-logo-symbol"> </span>
+    <span class="vertical-logo-symbol"> </span>
+    <span class="vertical-logo-symbol"> </span>
+    <span class="vertical-logo-symbol"> </span>
+    <span class="vertical-logo-symbol"> </span>
+    <span class="vertical-logo-symbol"> </span>
+    <span class="vertical-logo-symbol"> </span>
+    <span class="vertical-logo-symbol"> </span>
+    <span class="vertical-logo-symbol"> </span>
+    <span> </span>
+    <span class="logo-text"> Doppler </span>
+    <span> </span>
+    <span class="vertical-logo-symbol"> </span>
+    <span class="vertical-logo-symbol"> </span>
+    <span class="vertical-logo-symbol"> </span>
+    <span class="vertical-logo-symbol"> </span>
+    <span class="vertical-logo-symbol"> </span>
+    <span class="vertical-logo-symbol"> </span>
+    <span class="vertical-logo-symbol"> </span>
+    <span class="vertical-logo-symbol"> </span>
+    <span class="vertical-logo-symbol"> </span>
+    <span class="vertical-logo-symbol"> </span>
+    <span class="vertical-logo-symbol"> </span>
+    <span class="vertical-logo-symbol"> </span>
+  </div>
+  <div class="logo-line">
+    <span> </span>
+    <span> </span>
+    <span> </span>
+    <span> </span>
+    <span> </span>
+    <span> </span>
+    <span> </span>
+    <span> </span>
+    <span> </span>
+    <span> </span>
+    <span> </span>
+    <span> </span>
+    <span> </span>
+    <span> </span>
+    <span> </span>
+    <span> </span>
+    <span> </span>
+    <span> </span>
+    <span> </span>
+    <span> </span>
+    <span> </span>
+    <span> </span>
+    <span> </span>
+    <span> </span>
+    <span> </span>
+    <span> </span>
+    <span> </span>
+    <span> </span>
+    <span> </span>
+  </div>
+  <div class="logo-line">
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+  </div>
+  <div class="logo-line">
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+  </div>
+  <div class="logo-line">
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+    <span class="horizontal-logo-symbol"> </span>
+  </div>
+  <br>
+  <div class="section-title">* tl;dr</div>
+  <p class="text">
+    So much has changed and improved in the crypto space in the last decade, but one of the most persistent problems is
+    pricing, sourcing, and sustaining onchain liquidity for new and existing projects. <br><br>
+    <a
+      href="https://github.com/whetstoneresearch/docs/blob/main/whitepapers/doppler/Dutch_auction_Dynamic_Bonding_Curves.pdf">Doppler</a>
+    is a liquidity bootstrapping Protocol built on top of Uniswap v4. Doppler abstracts the challenges associated with
+    Uniswap v4 integrations from integrators by executing the entire liquidity bootstrapping auction inside of the hook
+    contract.
+    The hook-enshrined auction is designed from first principles to minimize the cost of incorrect initialization
+    prices, leading to more accurately priced liquidity with less drag. This is all while the auction is abstracted from
+    the user via the current swapping user and builder experience.
+    Integrators benefit from a credibly-neutral, self-executing, automated, permissionless base layer while still
+    capturing the lion's share of the value from their integrations via a protocol-enshrined integrator fee.
+    <br><br>
+  </p>
+  <br>
+  <div class="section-title">* Long form</div>
+  <p class="text">
+    During this crypto cycle, there has been an explosion in liquidity apps, which aim to create unique user experiences
+    driven by a liquidity layer like an AMM. This growth is driven by more abundant block space and better developer
+    experience.
+    <br><br>
+    To date, liquidity apps have faced several notable challenges:
     <br>
 
-    <script>
-        // inspired by https://commonware.xyz/
-        const horizontalSymbols = ["*"];
-    
-        function getRandomItem(arr) {
-            if (Math.random() > 0.95) {
-                return arr[Math.floor(Math.random() * arr.length)];
-            }
-            return " "
-        }
+  <ol>
+    <li>They require a time-consuming and difficult integration with a liquidity layer like the Uniswap Protocol,
+      <br>slowing down experimentation and the race to product market fit.</li>
+    <li>These integrations leak significant value, which leads to catastrophic losses to users and token projects.
+      <br>On Solana, this is <a href="https://x.com/0xngmi/status/1823399442306801974">over $400m to date</a> taken from
+      token’s value.</li>
+    <li>The final integrations are opinionated, which discourages new apps from building on top of them. <br>This limits
+      network effects and interoperability, two of the most powerful incentives in crypto-based markets.</li>
+  </ol>
+  </p>
+  <p class="text">
+    To solve these problems, Whetstone Research designed and is creating the reference implementation for <a
+      href="https://github.com/whetstoneresearch/docs/blob/main/whitepapers/doppler/Dutch_auction_Dynamic_Bonding_Curves.pdf">Doppler</a>.
+    Doppler is a liquidity bootstrapping protocol, utilizing a “customizable AMM”, built on top of Uniswap v4. It is
+    designed by a team of long-time Uniswap Protocol and onchain finance builders to support better economic outcomes
+    for
+    liquidity all while utilizing a permissionless, credibly-neutral, self-executing, and autonomous base layer for the
+    next generation of liquidity apps.
+    <br><br>
 
-        function getRandomDuration(min) {
-            return Math.random() * (10000 - min) + min;
-        }
+    Tokens utilizing Doppler will be tradeable on any Uniswap v4 swapping interface by default during the price
+    discovery phase,
+    utilizing the simple swapping primitive that users have come to know and love. The complex auction itself is
+    abstracted
+    from users/integrators and is fully and autonomously facilitated within the Uniswap v4 hook contract. The auction
+    and hook logic were optimized
+    from the ground up to work onchain, allowing users to get more liquidity for and keep more value in their tokens.
+    <br><br>
 
-        function updateSymbol(symbol, choices) {
-            symbol.innerText = getRandomItem(choices);
-            symbol.classList.remove('animate'); // Remove the animation class first
-            void symbol.offsetWidth; // Trigger reflow to restart the animation
-            symbol.classList.add('animate'); // Re-add the animation class
+    Liquidity in the Protocol is generated solely from users swapping for the token. The Protocol does not require
+    neither integrators nor users to provide any tokens except the allotment for liquidity provision. If the auction
+    ends according to user-specified parameters,
+    the resulting liquidity will be sent to a generalized AMM (like Uniswap v2) to support long-term liquidity.
+    Otherwise, users will be refunded a pro-rata share of the other token.
+    <br><br>
 
-            setTimeout(() => updateSymbol(symbol, choices), getRandomDuration(4000));
-        }
+    The public release will also include contracts and an SDK to support integrators with token deployment and
+    integration with Doppler.
+    <br><br>
 
-        document.querySelectorAll('.horizontal-logo-symbol').forEach(symbol => {
-            setTimeout(() => updateSymbol(symbol, horizontalSymbols), getRandomDuration(3000));
-        });
-    </script>
+    The team at <a href="/">Whetstone Research</a>, who designed Doppler, is providing an open-source interface for the
+    Doppler Protocol
+    to bootstrap a decentralized set of integrators. To sustain this, the Protocol is intentionally leaving significant
+    value
+    for integrators via a Protocol-enshrined “integrator fee”, similar to an “LP fee” in Uniswap Protocol.
+    Integrators who utilize the Protocol can set an arbitrary but capped “Integrator fee”,
+    which is captured by the integrator at the end of a successful bootstrapping process.
+    This will allow arbitrary integrators to capture value they generate using the Protocol.
+    <br><br>
+
+    A decentralized set of user interfaces is better long-term for users and the Protocol and will allow liquidity apps
+    to experiment more quickly and focus on building unique and interesting apps. At the same time, this setup enables
+    sustainable teams to be incentivized to focus solely on the Protocol.
+    Some apps exist already and would benefit from Doppler are interfaces that create and swap memecoins, integrators
+    using bonding curves to sell real world items,
+    and protocols looking to create sustainable liquidity from their DAO’s token. We believe that apps will find even
+    more interesting and novel ways to utilize the Protocol.
+    <br><br>
+
+    Deployed Doppler instances will be permissionless, allowing any integrators to use the Protocol. Any application
+    building on top of the Protocol
+    can use Doppler to create liquidity without an initial price. Since Doppler is built to allow gradual improvements
+    without breaking, integrators will continually benefit
+    from the work to continually push the base-layer forward.
+    <br><br>
+
+    Overall, Doppler abstracts the most difficult part away from liquidity apps integrating with the liquidity layers,
+    allowing integrators to focus on building new experiences for users, while still capturing the value created by the
+    integration.
+    <br><br>
+
+    If you are interested in integrating or collaborating, reach out to <a
+      href="mailto:contact@whetstone.cc">contact@whetstone.cc </a>, <a
+      href="https://x.com/whetstonedotcc">@whetstonedotcc</a> on Twitter,
+    or sign up <a href="https://paragraph.xyz/@whetstone">here</a> to be notified of the public release of the SDK,
+    contracts, and integration docs. We are looking forward to seeing what everyone builds!
+    <br><br>
+
+    <a href="disclaimers.html">Disclaimers</a>
+
+  </p>
+  <br>
+
+  <script>
+    // inspired by https://commonware.xyz/
+    const horizontalSymbols = ["*"];
+
+    function getRandomItem(arr) {
+      if (Math.random() > 0.95) {
+        return arr[Math.floor(Math.random() * arr.length)];
+      }
+      return " "
+    }
+
+    function getRandomDuration(min) {
+      return Math.random() * (10000 - min) + min;
+    }
+
+    function updateSymbol(symbol, choices) {
+      symbol.innerText = getRandomItem(choices);
+      symbol.classList.remove('animate'); // Remove the animation class first
+      void symbol.offsetWidth; // Trigger reflow to restart the animation
+      symbol.classList.add('animate'); // Re-add the animation class
+
+      setTimeout(() => updateSymbol(symbol, choices), getRandomDuration(4000));
+    }
+
+    document.querySelectorAll('.horizontal-logo-symbol').forEach(symbol => {
+      setTimeout(() => updateSymbol(symbol, horizontalSymbols), getRandomDuration(3000));
+    });
+  </script>
 </body>
 
 </html>
