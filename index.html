@@ -247,6 +247,12 @@
       .mobile-spacing-adjust-1 { top: 240px !important; } /* Main content */
       .mobile-spacing-adjust-2 { top: 440px !important; } /* Open roles */
       .mobile-spacing-adjust-3 { top: 480px !important; } /* Job links */
+      
+      /* Ensure footer appears below content on mobile */
+      .bg-container {
+        min-height: calc(100vh + 150px); /* Add extra height to accommodate content */
+        padding-bottom: 100px; /* Add bottom padding to push footer down */
+      }
     }
     
     /* For very small screens, need even more spacing */
@@ -254,6 +260,12 @@
       .mobile-spacing-adjust-1 { top: 260px !important; }
       .mobile-spacing-adjust-2 { top: 500px !important; }
       .mobile-spacing-adjust-3 { top: 540px !important; }
+      
+      /* Ensure footer appears below content on mobile */
+      .bg-container {
+        min-height: calc(100vh + 200px); /* Add extra height to accommodate content */
+        padding-bottom: 120px; /* Add bottom padding to push footer down */
+      }
     }
 
     /* Custom arrow styling */
