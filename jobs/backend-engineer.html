@@ -6,49 +6,78 @@
   <link rel="icon" href="../images/favicon.ico">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="whetstone research" />
-
   <title>gm</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @font-face {
+      font-family: 'Signifier Medium';
+      src: url('../fonts/Signifier-Medium.otf') format('opentype');
+      font-weight: 500;
+      font-style: normal;
+    }
 
-  <link rel="stylesheet" href="../styles.css" />
+    a:hover {
+      color: black !important;
+    }
+  </style>
   <script defer src="https://cloud.umami.is/script.js" data-website-id="435b33ab-c4e3-4b5a-aec5-6cbf5311c08c"></script>
 </head>
 
 <body>
-  <div id="preamble">
-    <img src="../images/header.png" style="max-width: 75%; display: block; margin: 0 auto;">
-    <h1 class="title">Whetstone Research</h1>
+  <div class="bg-[#cccccc] min-h-screen font-sans">
+    <!-- Sticky Header -->
+    <div class="sticky top-0 z-10 py-[49.5px]">
+      <div class="flex justify-between items-center px-[4.16667%]">
+        <div class="flex items-center gap-8">
+          <p class="font-medium text-[16px] text-black whitespace-pre" style="font-family: 'Signifier Medium', serif;">Whetstone Research</p>
+                     <p class="font-medium text-[16px] text-black/50 whitespace-pre">
+             <a href="../index.html" class="underline decoration-dotted">Back</a>
+           </p>
+        </div>
+      </div>
+    </div>
 
-    <h2 class="subtitle" style="margin-bottom: 35px; font-size: large">
-      info:
-      <a href="mailto:contact@whetstone.cc"> email</a>
-      ,
-      <a href="https://x.com/whetstonedotcc"> twitter</a>
-      ,
-      and
-      <a href="https://paragraph.xyz/@whetstone"> blog</a>
-    </h2>
-  </div>
+    <!-- Main Content -->
+    <div class="px-[4.16667%] pb-[120px]">
+      <div class="font-medium text-[16px] text-black w-[440px] leading-normal tracking-[-0.16px]">
+        <h2 class="text-[20px] font-medium mb-6">Backend Engineer</h2>
+        
+        <h3 class="text-[18px] font-medium mb-4 mt-8">About Whetstone Research</h3>
+        <p class="mb-6 text-black/60">Whetstone Research is focused on designing and building new protocols that accelerate the future of onchain markets. The team is less than 10 people with deep hands on experience in the blockchain industry; previously at Uniswap, Primitive, Aztec, and numerous others. We are working on <a href="https://doppler.lol/" class="underline" target="_blank">Doppler</a>, a hyper-efficient price discovery and liquidity bootstrapping Protocol built on the EVM, used by Zora and others. Learn more about Whetstone on <a href="https://whetstone.cc/" class="underline" target="_blank">our website</a> or read our <a href="https://paragraph.xyz/@whetstone" class="underline" target="_blank">blog</a>.</p>
+        
+        <h3 class="text-[18px] font-medium mb-4 mt-8">About the role</h3>
+        <p class="mb-6 text-black/60">This role is going to be working on the open source <a href="https://github.com/whetstoneresearch/doppler-sdk" class="underline" target="_blank">Doppler SDK and Indexer</a>.</p>
+        
+        <h3 class="text-[18px] font-medium mb-4 mt-8">Location</h3>
+        <p class="mb-6 text-black/60">Whetstone Research is remote-friendly. Timezones overlapping with EST are preferred.</p>
+        
+        <h3 class="text-[18px] font-medium mb-4 mt-8">Responsibilities</h3>
+        <p class="mb-2 text-black/60">Implementing - new SDK and Indexer features</p>
+        <p class="mb-2 text-black/60">Testing - automate backend testing alongside a release pipeline</p>
+        <p class="mb-2 text-black/60">Support - helping applications and protocols integrate the SDK and Indexer</p>
+        <p class="mb-6 text-black/60">Shipping - overseeing successful production releases with release notes and versioning</p>
+        
+        <h3 class="text-[18px] font-medium mb-4 mt-8">What we're looking for</h3>
+        <p class="mb-6 text-black/60">Ideally are experienced implementing and delivering highly reliable and scalable backend data services. You are deeply familiar with TypeScript and GraphQL. You have an understanding of the blockchain industry and the difficulties of managing multichain indexer deployments. You know that testnet faucets are frustrating to deal with and have clever solutions for testing across all various configurations that users may end up deploying. You have experience contributing to and managing open source software projects external teams rely on in production. You like helping others solve their problems with novel solutions and are a great communicator.</p>
+        
+        <p class="mb-2 text-black/60">If this sounds like you, please get in touch. Email resumes to hiring @ whetstone.cc</p>
+        <p class="text-black/60">Let's build the future of onchain markets together.</p>
+      </div>
+    </div>
 
-  <div style="margin-bottom: 35px;">
-    <h2 class="subtitle" style="margin-top: 35px; font-size: large; text-align: left">Jobs: Backend Engineer</h2>
-    <h3 class="subtitle" style="margin-top: 35px; font-size: medium; text-align: left">About Whetstone</h3>
-    <p class="text">Whetstone Research is focused on designing and building new protocols that accelerate the future of onchain markets. The team is less than 10 people with deep hands on experience in the blockchain industry; previously at Uniswap, Primitive, Aztec, and numerous others. We are working on <a href="https://doppler.lol/">Doppler</a>, a hyper-efficient price discovery and liquidity bootstrapping Protocol built on the EVM, used by Zora and others. Learn more about Whetstone on <a href="https://whetstone.cc/">our website</a> or read our <a href="https://paragraph.xyz/@whetstone">blog</a>. </p>
-    <h3 class="subtitle" style="margin-top: 35px; font-size: medium; text-align: left">About the role</h3>
-    <p class="text"></p>This role is going to be working on the open source <a href="https://github.com/whetstoneresearch/doppler-sdk">Doppler SDK and Indexer</a>.</p>
-    <h3 class="subtitle" style="margin-top: 35px; font-size: medium; text-align: left">Location</h3>
-    <p class="text">Whetstone is remote-friendly. Timezones overlapping with EST are preferred.</p>
-    <h3 class="subtitle" style="margin-top: 35px; font-size: medium; text-align: left">Responsibilities</h3>
-    <p class="text">Implementing - new SDK and Indexer features</p>
-    <p class="text">Testing - automate backend testing alongside a release pipeline</p>
-    <p class="text">Support - helping applications and protocols integrate the SDK and Indexer</p>
-    <p class="text">Shipping - overseeing successful production releases with release notes and versioning</p>
-    <h3 class="subtitle" style="margin-top: 35px; font-size: medium; text-align: left">What we’re looking for </h3>
-    <p class="text">Ideally are experienced implementing and delivering highly reliable and scalable backend data services. You are deeply familiar with TypeScript and GraphQL. You have an understanding of the blockchain industry and the difficulties of managing multichain indexer deployments. You know that testnet faucets are frustrating to deal with and have clever solutions for testing across all various configurations that users may end up deploying. You have experience contributing to and managing open source software projects external teams rely on in production. You like helping others solve their problems with novel solutions and are a great communicator. </p>
-    <p class="text"></p>If this sounds like you, please get in touch. Email resumes to hiring @ whetstone.cc </p>
-    <p class="text">Let’s build the future of onchain markets together.</p>
+    <!-- Footer Links (matching homepage) -->
+    <div class="fixed font-medium text-[16px] text-black/50 left-[4.16667%] bottom-[49.5px] z-10">
+      <p class="underline decoration-dotted whitespace-pre"><a href="mailto:contact@whetstone.cc">Email</a></p>
+    </div>
+    
+    <div class="fixed font-medium text-[16px] text-black/50 left-1/2 transform -translate-x-1/2 bottom-[49.5px] z-10">
+      <p class="underline decoration-dotted whitespace-pre"><a href="https://x.com/whetstonedotcc" target="_blank">Twitter</a></p>
+    </div>
+    
+    <div class="fixed font-medium text-[16px] text-black/50 right-[4.16667%] bottom-[49.5px] z-10">
+      <p class="underline decoration-dotted whitespace-pre"><a href="https://paragraph.xyz/@whetstone" target="_blank">Blog</a></p>
+    </div>
   </div>
-  <hr/>
-  <a href="../index.html" style="margin-top: 35px; display: block; text-align: left;">Back to homepage</a>
 </body>
 
 </html>

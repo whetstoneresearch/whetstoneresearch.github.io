@@ -6,44 +6,447 @@
   <link rel="icon" href="images/favicon.ico">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="whetstone research" />
-
   <title>gm</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @font-face {
+      font-family: 'Signifier Medium';
+      src: url('fonts/Signifier-Medium.otf') format('opentype');
+      font-weight: 500;
+      font-style: normal;
+    }
+    
+    /* Text animation styles */
+    .text-animate {
+      overflow: hidden;
+    }
+    
+    .text-animate-word {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(20px);
+      filter: blur(10px);
+      animation: blurInUp 0.6s ease forwards;
+      white-space: pre;
+    }
+    
+    @keyframes blurInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0px);
+      }
+    }
+    
+    /* Fade in animation for other elements */
+    .fade-in {
+      opacity: 0;
+      animation: fadeIn 0.8s ease forwards;
+    }
+    
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+    
+    /* ASCII Art Glowing Animation Styles */
+    .ascii-container {
+      font-family: 'Courier New', monospace;
+      line-height: 1;
+      letter-spacing: 0;
+      white-space: pre;
+      font-size: 12px;
+      color: #333;
+      position: relative;
+    }
+    
+    .ascii-char {
+      display: inline-block;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+    
+    .ascii-char:not(.space) {
+      cursor: default;
+    }
+    
+    .ascii-char.glowing {
+      color: #ffffff;
+      text-shadow: 
+        0 0 5px #ffffff,
+        0 0 10px #ffffff,
+        0 0 15px #ffffff,
+        0 0 20px #4f46e5,
+        0 0 35px #4f46e5,
+        0 0 40px #4f46e5;
+      animation: pulse-glow 2s ease-in-out;
+    }
+    
+    .ascii-char.random-glow {
+      animation: random-pulse 3s ease-in-out infinite;
+    }
+    
+    @keyframes pulse-glow {
+      0%, 100% {
+        text-shadow: 
+          0 0 5px #ffffff,
+          0 0 10px #ffffff,
+          0 0 15px #ffffff,
+          0 0 20px #4f46e5,
+          0 0 35px #4f46e5,
+          0 0 40px #4f46e5;
+      }
+      50% {
+        text-shadow: 
+          0 0 2px #ffffff,
+          0 0 5px #ffffff,
+          0 0 8px #ffffff,
+          0 0 12px #4f46e5,
+          0 0 18px #4f46e5,
+          0 0 25px #4f46e5;
+      }
+    }
+    
+    @keyframes random-pulse {
+      0%, 85%, 100% {
+        color: #333;
+        text-shadow: none;
+        opacity: 1;
+      }
+      5% {
+        color: #555;
+        text-shadow: 
+          0 0 1px #ffffff,
+          0 0 2px #ffffff;
+        opacity: 1;
+      }
+      15% {
+        color: #ffffff;
+        text-shadow: 
+          0 0 2px #ffffff,
+          0 0 4px #ffffff,
+          0 0 6px #ffffff,
+          0 0 8px #4f46e5,
+          0 0 12px #4f46e5,
+          0 0 16px #4f46e5;
+        opacity: 1;
+      }
+      35% {
+        color: #ffffff;
+        text-shadow: 
+          0 0 3px #ffffff,
+          0 0 6px #ffffff,
+          0 0 9px #ffffff,
+          0 0 12px #4f46e5,
+          0 0 18px #4f46e5,
+          0 0 24px #4f46e5;
+        opacity: 1;
+      }
+      55% {
+        color: #ffffff;
+        text-shadow: 
+          0 0 2px #ffffff,
+          0 0 4px #ffffff,
+          0 0 6px #ffffff,
+          0 0 8px #4f46e5,
+          0 0 12px #4f46e5,
+          0 0 16px #4f46e5;
+        opacity: 1;
+      }
+      75% {
+        color: #555;
+        text-shadow: 
+          0 0 1px #ffffff,
+          0 0 2px #ffffff;
+        opacity: 1;
+      }
+    }
+    
+    /* Hide ASCII art on smaller screens to prevent content squishing */
+    @media (max-width: 1200px) {
+      .mobile-ascii-adjust {
+        display: none !important;
+      }
+    }
+    
+    /* Ensure background always fills viewport */
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      min-height: 100vh;
+      background-color: #cccccc;
+    }
+    
+    .bg-container {
+      min-height: 100vh;
+      min-height: 100dvh; /* Use dynamic viewport height for mobile */
+      width: 100%;
+    }
+    
+    /* Content width constraints to match header/footer */
+    .content-width-constrained {
+      right: calc(4.16667% + 556px + 2rem) !important; /* Leave space for ASCII art + margin */
+      width: auto !important;
+      max-width: 440px !important; /* Maintain original content width */
+    }
+    
+    /* Remove content width constraint when ASCII art is hidden */
+    @media (max-width: 1200px) {
+      .content-width-constrained {
+        right: 4.16667% !important; /* Match header/footer when no ASCII art */
+        max-width: 448px !important; /* Constrained width for better readability */
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .content-width-constrained {
+        right: 4.16667% !important; /* Match header/footer on mobile */
+        max-width: none !important; /* Allow full width on mobile */
+      }
+      
+      /* Adjust positioning to prevent overlaps on mobile */
+      .mobile-spacing-adjust-1 { top: 240px !important; } /* Main content */
+      .mobile-spacing-adjust-2 { top: 440px !important; } /* Open roles */
+      .mobile-spacing-adjust-3 { top: 480px !important; } /* Job links */
+    }
+    
+    /* For very small screens, need even more spacing */
+    @media (max-width: 480px) {
+      .mobile-spacing-adjust-1 { top: 260px !important; }
+      .mobile-spacing-adjust-2 { top: 500px !important; }
+      .mobile-spacing-adjust-3 { top: 540px !important; }
+    }
 
-  <link rel="stylesheet" href="styles.css" />
+    /* Custom arrow styling */
+    .external-arrow {
+      font-size: 0.75em;
+      vertical-align: top;
+      margin-left: 2px;
+    }
+
+    /* Job role colored squares */
+    .job-square {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      margin-right: 8px;
+      vertical-align: middle;
+      transform: translateY(-2px);
+    }
+    
+    .square-general { background-color: #ff0000; }
+    .square-frontend { background-color: #0066ff; }
+    .square-backend { background-color: #ffff00; }
+    .square-smart-contract { background-color: #ff0099; }
+
+    /* Global link hover effect */
+    a:hover {
+      color: black !important;
+    }
+  </style>
   <script defer src="https://cloud.umami.is/script.js" data-website-id="435b33ab-c4e3-4b5a-aec5-6cbf5311c08c"></script>
 </head>
 
 <body>
-  <div id="preamble">
-    <img src="images/header.png" style="max-width: 75%; display: block; margin: 0 auto;">
-    <h1 class="title">Whetstone Research</h1>
+  <div class="bg-[#cccccc] bg-container relative w-full font-sans">
+    <!-- Welcome Header -->
+    <div class="absolute font-medium text-[16px] text-black left-[4.16667%] top-[49.5px] fade-in" style="animation-delay: 2s; font-family: 'Signifier Medium', serif;">
+      <p class="whitespace-pre">Whetstone Research</p>
+    </div>
+    
+    <!-- Team Link -->
+    <div class="absolute font-medium text-[16px] text-black/60 right-[4.16667%] top-[49.5px] fade-in" style="animation-delay: 3.4s;">
+      <p class="underline decoration-dotted whitespace-pre"><a href="team.html">Team</a></p>
+    </div>
 
-    <h2 class="subtitle" style="margin-bottom: 32px; font-size: large">
-      info:
-      <a href="mailto:contact@whetstone.cc"> email</a>
-      ,
-      <a href="https://x.com/whetstonedotcc"> twitter</a>
-      ,
-      and
-      <a href="https://paragraph.xyz/@whetstone"> blog</a>
-    </h2>
+    <!-- Main Title -->
+    <div class="absolute text-[36px] text-black leading-none tracking-[-0.36px] left-[4.16667%] text-animate content-width-constrained" style="top: 120px; font-family: 'Signifier Medium', serif;" id="main-title">
+      <p>We're building the future of onchain markets.</p>
+    </div>
+
+    <!-- Main Content -->
+    <div class="absolute font-medium text-[16px] text-black/60 leading-normal tracking-[-0.16px] left-[4.16667%] fade-in content-width-constrained mobile-spacing-adjust-1" style="top: 224px; animation-delay: 2.5s;">
+      <p class="mb-0">
+        Our first product is <a href="https://doppler.lol/" class="underline" target="_blank">Doppler<span class="external-arrow">&#8599;</span></a>, a hyper-efficient price discovery and liquidity bootstrapping Protocol built on the Uniswap ecosystem.
+      </p>
+      <p class="mb-0">&nbsp;</p>
+      <p>
+        Our second product is <a href="https://pure.st/" class="underline" target="_blank">Pure Markets<span class="external-arrow">&#8599;</span></a>, a front-end to DeFi and the first application built on top of Doppler.
+      </p>
+    </div>
+
+    <!-- Open Roles Section -->
+    <div class="absolute font-medium text-[16px] text-black left-[4.16667%] fade-in mobile-spacing-adjust-2" style="top: 391px; animation-delay: 3s;">
+      <p class="whitespace-pre">Open roles</p>
+    </div>
+
+    <!-- Job Links -->
+    <div class="absolute font-medium text-[16px] text-black/60 leading-normal tracking-[-0.16px] left-[4.16667%] fade-in content-width-constrained mobile-spacing-adjust-3" style="top: 429px; animation-delay: 3.2s;">
+      <a href="jobs/general-application.html" class="underline block mb-0"><span class="job-square square-general"></span>General application</a>
+      <p class="mb-0">&nbsp;</p>
+      <a href="jobs/frontend-engineer.html" class="underline block mb-0"><span class="job-square square-frontend"></span>Frontend engineer</a>
+      <p class="mb-0">&nbsp;</p>
+      <a href="jobs/backend-engineer.html" class="underline block mb-0"><span class="job-square square-backend"></span>Backend engineer</a>
+      <p class="mb-0">&nbsp;</p>
+      <a href="jobs/smart-contract-engineer.html" class="underline block"><span class="job-square square-smart-contract"></span>Smart contract engineer</a>
+    </div>
+
+    <!-- Footer Links -->
+    <div class="absolute font-medium text-[16px] text-black/60 left-[4.16667%] bottom-[49.5px] fade-in" style="animation-delay: 3.5s;">
+      <p class="underline decoration-dotted whitespace-pre"><a href="mailto:contact@whetstone.cc">Email</a></p>
+    </div>
+    
+    <div class="absolute font-medium text-[16px] text-black/60 left-1/2 transform -translate-x-1/2 bottom-[49.5px] fade-in" style="animation-delay: 3.6s;">
+      <p class="underline decoration-dotted whitespace-pre"><a href="https://x.com/whetstonedotcc" target="_blank">Twitter</a></p>
+    </div>
+    
+    <div class="absolute font-medium text-[16px] text-black/60 right-[4.16667%] bottom-[49.5px] fade-in" style="animation-delay: 3.7s;">
+      <p class="underline decoration-dotted whitespace-pre"><a href="https://paragraph.xyz/@whetstone" target="_blank">Blog</a></p>
+    </div>
+
+    <!-- ASCII Art Container -->
+    <div class="absolute w-[556px] h-[556px] right-[4.16667%] overflow-hidden fade-in mobile-ascii-adjust" style="top: 120px; animation-delay: 2.2s;">
+      <div class="absolute bg-[#DCDCDC] w-full h-full"></div>
+      <div class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+        <div id="ascii-art" class="ascii-container"></div>
+      </div>
+    </div>
   </div>
 
-  <div>
-    <h2 class="subtitle" style="margin-top: 32px; font-size: large; text-align: left">About us</h2>
-    <p class="text">We are designing and building new Protocols that accelerate the future of onchain markets. Learn
-      more about the team <a href='team.html'>here</a>.</p> 
+  <script>
+    // Text animation implementation inspired by Magic UI
+    function animateText() {
+      const titleElement = document.getElementById('main-title');
+      const textElement = titleElement.querySelector('p');
+      const text = textElement.textContent;
+      
+      // Split text into words while preserving spaces
+      const parts = text.split(/(\s+)/);
+      
+      // Clear the original text
+      textElement.innerHTML = '';
+      
+      // Create span elements for each part (words and spaces)
+      let wordIndex = 0;
+      parts.forEach((part) => {
+        const span = document.createElement('span');
+        span.textContent = part;
+        
+        // Only animate actual words, not spaces
+        if (part.trim().length > 0) {
+          span.className = 'text-animate-word';
+          span.style.animationDelay = `${wordIndex * 0.15}s`;
+          wordIndex++;
+        } else {
+          // For spaces, just make them visible immediately
+          span.style.opacity = '1';
+        }
+        
+        textElement.appendChild(span);
+      });
+    }
+    
+    // ASCII Art with glowing animation
+    function initASCIIArt() {
+      const asciiArt = `                            ............                 
+                            ............                 
+                            ............                 
+                 ..................................      
+                 ..................................      
+                 ..................................      
+                 .......................                 
+      ..................................          +++++++
+      ..................................          +++++++
+                 ............                     +++++++
+-------          ............          ++++++++++++++++++
+-------          ............          ++++++++++++++++++
+-------          ............          ++++++++++++++++++
+-------                                ++++++++++++      
+------------------          +++++++++++++++++++++++      
+------------------          +++++++++++++++++++++++      
+      ------------          ++++++++++++                 
+      ---------------    +++++++++++++++                 
+      ---------------    +++++++++++++++                 
+      ---------------    +++++++++++++++                 
+                 ----    ++++                            
+                 ----    ++++                            
+                 ----    ++++                            `;
 
-    <h2 class="subtitle" style="margin-top: 32px; font-size: large; text-align: left">Our products</h2>
-    <p class="text">Our first product is <a href='https://doppler.lol/'>Doppler</a>, a hyper-efficient price discovery and liquidity bootstrapping Protocol built on the Uniswap ecosystem.</p>
-    <p class="text">Our second product is <a href='https://pure.st/'>Pure Markets</a>, a front-end to DeFi and the first application built on top of Doppler.</p>
-  
-    <h2 class="subtitle" style="margin-top: 32px; font-size: large; text-align: left">Open roles</h2>
-    <p class="text"><a href='jobs/general-application.html'>General application</a></p>
-    <p class="text"><a href='jobs/frontend-engineer.html'>Frontend engineer</a></p>
-    <p class="text"><a href='jobs/backend-engineer.html'>Backend engineer</a></p>
-    <p class="text"><a href='jobs/smart-contract-engineer.html'>Smart contract engineer</a></p>
-  </div>
+      const container = document.getElementById('ascii-art');
+      const chars = [];
+      let charIndex = 0;
+      
+      // Convert ASCII art to individual character spans
+      const lines = asciiArt.split('\n');
+      lines.forEach((line, lineIndex) => {
+        const lineDiv = document.createElement('div');
+        
+        for (let i = 0; i < line.length; i++) {
+          const char = line[i];
+          const span = document.createElement('span');
+          span.textContent = char;
+          span.className = 'ascii-char';
+          span.dataset.index = charIndex;
+          
+          if (char === ' ') {
+            span.classList.add('space');
+          } else {
+            // Add hover effect for non-space characters
+            span.addEventListener('mouseenter', () => {
+              span.classList.add('glowing');
+              setTimeout(() => {
+                span.classList.remove('glowing');
+              }, 2000);
+            });
+            
+            chars.push(span);
+          }
+          
+          lineDiv.appendChild(span);
+          charIndex++;
+        }
+        
+        container.appendChild(lineDiv);
+      });
+      
+      // Random glowing effect
+      function randomGlow() {
+        // Select 3-5 random characters to glow
+        const numGlowing = Math.floor(Math.random() * 3) + 3;
+        const selectedChars = [];
+        
+        for (let i = 0; i < numGlowing; i++) {
+          const randomChar = chars[Math.floor(Math.random() * chars.length)];
+          if (!selectedChars.includes(randomChar) && !randomChar.classList.contains('glowing')) {
+            selectedChars.push(randomChar);
+            randomChar.classList.add('random-glow');
+          }
+        }
+        
+        // Remove the glow after animation
+        setTimeout(() => {
+          selectedChars.forEach(char => {
+            char.classList.remove('random-glow');
+          });
+        }, 3000);
+      }
+      
+      // Start random glowing effect
+      setInterval(randomGlow, 2000);
+      
+      // Initial random glow after a delay
+      setTimeout(randomGlow, 3000);
+    }
+    
+    // Initialize animations when page loads
+    document.addEventListener('DOMContentLoaded', () => {
+      animateText();
+      initASCIIArt();
+    });
+  </script>
 </body>
 
 </html>
