@@ -208,63 +208,66 @@
     }
     
     /* Content width constraints to match header/footer */
-    .content-width-constrained {
-      right: calc(4.16667% + 556px + 2rem) !important; /* Leave space for ASCII art + margin */
-      width: auto !important;
-      max-width: 440px !important; /* Maintain original content width */
+    .main-content-container {
+      position: absolute;
+      left: 4.16667%;
+      top: 120px;
+      right: calc(4.16667% + 556px + 2rem); /* Leave space for ASCII art + margin */
+      max-width: 440px; /* Maintain original content width */
+      display: flex;
+      flex-direction: column;
+      gap: 24px; /* Consistent spacing between sections */
     }
     
-    /* Adjust content width as ASCII art scales down */
+    /* Adjust container width as ASCII art scales down */
     @media (max-width: 1200px) {
-      .content-width-constrained {
-        right: calc(4.16667% + 445px + 1.6rem) !important; /* Scaled ASCII (80%) */
-        max-width: 448px !important;
+      .main-content-container {
+        right: calc(4.16667% + 445px + 1.6rem); /* Scaled ASCII (80%) */
+        max-width: 448px;
       }
     }
     
     @media (max-width: 1000px) {
-      .content-width-constrained {
-        right: calc(4.16667% + 361px + 1.3rem) !important; /* Scaled ASCII (65%) */
-        max-width: 448px !important;
+      .main-content-container {
+        right: calc(4.16667% + 361px + 1.3rem); /* Scaled ASCII (65%) */
+        max-width: 448px;
       }
     }
     
     /* Remove content width constraint when ASCII art is hidden */
     @media (max-width: 850px) {
-      .content-width-constrained {
-        right: 4.16667% !important; /* Match header/footer when no ASCII art */
-        max-width: 448px !important; /* Constrained width for better readability */
+      .main-content-container {
+        right: 4.16667%; /* Match header/footer when no ASCII art */
+        max-width: 448px; /* Constrained width for better readability */
       }
     }
     
     @media (max-width: 768px) {
-      .content-width-constrained {
-        right: 4.16667% !important; /* Match header/footer on mobile */
-        max-width: none !important; /* Allow full width on mobile */
+      .main-content-container {
+        right: 4.16667%; /* Match header/footer on mobile */
+        max-width: none; /* Allow full width on mobile */
+        top: 160px; /* Closer to desktop position on mobile */
+        gap: 32px; /* Slightly larger gap on mobile */
       }
-      
-      /* Adjust positioning to prevent overlaps on mobile */
-      .mobile-spacing-adjust-1 { top: 240px !important; } /* Main content */
-      .mobile-spacing-adjust-2 { top: 440px !important; } /* Open roles */
-      .mobile-spacing-adjust-3 { top: 480px !important; } /* Job links */
       
       /* Ensure footer appears below content on mobile */
       .bg-container {
-        min-height: calc(100vh + 150px); /* Add extra height to accommodate content */
-        padding-bottom: 100px; /* Add bottom padding to push footer down */
+        min-height: calc(100vh + 100px); /* Reduced extra height */
+        padding-bottom: 80px; /* Reduced bottom padding */
       }
     }
     
-    /* For very small screens, need even more spacing */
+    /* For very small screens */
     @media (max-width: 480px) {
-      .mobile-spacing-adjust-1 { top: 260px !important; }
-      .mobile-spacing-adjust-2 { top: 500px !important; }
-      .mobile-spacing-adjust-3 { top: 540px !important; }
+      .main-content-container {
+        top: 180px; /* Slightly more space for very small screens */
+        gap: 36px; /* Moderate gap for very small screens */
+      }
       
       /* Ensure footer appears below content on mobile */
       .bg-container {
-        min-height: calc(100vh + 200px); /* Add extra height to accommodate content */
-        padding-bottom: 120px; /* Add bottom padding to push footer down */
+        min-height: calc(100vh + 120px); /* Moderate extra height */
+        padding-bottom: 100px; /* Moderate bottom padding */
       }
     }
 
@@ -310,36 +313,39 @@
       <p class="underline decoration-dotted whitespace-pre"><a href="team.html">Team</a></p>
     </div>
 
-    <!-- Main Title -->
-    <div class="absolute text-[36px] text-black leading-none tracking-[-0.36px] left-[4.16667%] text-animate content-width-constrained" style="top: 120px; font-family: 'Signifier Medium', serif;" id="main-title">
-      <p>We're building the future of onchain markets.</p>
-    </div>
+    <!-- Main Content Container -->
+    <div class="main-content-container">
+      <!-- Main Title -->
+      <div class="text-[36px] text-black leading-none tracking-[-0.36px] text-animate" style="font-family: 'Signifier Medium', serif;" id="main-title">
+        <p>We're building the future of onchain markets.</p>
+      </div>
 
-    <!-- Main Content -->
-    <div class="absolute font-medium text-[16px] text-black/60 leading-normal tracking-[-0.16px] left-[4.16667%] fade-in content-width-constrained mobile-spacing-adjust-1" style="top: 224px; animation-delay: 2.5s;">
-      <p class="mb-0">
-        Our first product is <a href="https://doppler.lol/" class="underline" target="_blank">Doppler<span class="external-arrow">&#8599;</span></a>, a hyper-efficient price discovery and liquidity bootstrapping Protocol built on the Uniswap ecosystem.
-      </p>
-      <p class="mb-0">&nbsp;</p>
-      <p>
-        Our second product is <a href="https://pure.st/" class="underline" target="_blank">Pure Markets<span class="external-arrow">&#8599;</span></a>, a front-end to DeFi and the first application built on top of Doppler.
-      </p>
-    </div>
+      <!-- Main Content -->
+      <div class="font-medium text-[16px] text-black/60 leading-normal tracking-[-0.16px] fade-in" style="animation-delay: 2.5s;">
+        <p class="mb-0">
+          Our first product is <a href="https://doppler.lol/" class="underline" target="_blank">Doppler<span class="external-arrow">&#8599;</span></a>, a hyper-efficient price discovery and liquidity bootstrapping Protocol built on the Uniswap ecosystem.
+        </p>
+        <p class="mb-0">&nbsp;</p>
+        <p>
+          Our second product is <a href="https://pure.st/" class="underline" target="_blank">Pure Markets<span class="external-arrow">&#8599;</span></a>, a front-end to DeFi and the first application built on top of Doppler.
+        </p>
+      </div>
 
-    <!-- Open Roles Section -->
-    <div class="absolute font-medium text-[16px] text-black left-[4.16667%] fade-in mobile-spacing-adjust-2" style="top: 391px; animation-delay: 3s;">
-      <p class="whitespace-pre">Open roles</p>
-    </div>
+      <!-- Open Roles Section -->
+      <div class="font-medium text-[16px] text-black fade-in" style="animation-delay: 3s;">
+        <p class="whitespace-pre">Open roles</p>
+      </div>
 
-    <!-- Job Links -->
-    <div class="absolute font-medium text-[16px] text-black/60 leading-normal tracking-[-0.16px] left-[4.16667%] fade-in content-width-constrained mobile-spacing-adjust-3" style="top: 429px; animation-delay: 3.2s;">
-      <a href="jobs/general-application.html" class="underline block mb-0"><span class="job-square square-general"></span>General application</a>
-      <p class="mb-0">&nbsp;</p>
-      <a href="jobs/frontend-engineer.html" class="underline block mb-0"><span class="job-square square-frontend"></span>Frontend engineer</a>
-      <p class="mb-0">&nbsp;</p>
-      <a href="jobs/backend-engineer.html" class="underline block mb-0"><span class="job-square square-backend"></span>Backend engineer</a>
-      <p class="mb-0">&nbsp;</p>
-      <a href="jobs/smart-contract-engineer.html" class="underline block"><span class="job-square square-smart-contract"></span>Smart contract engineer</a>
+      <!-- Job Links -->
+      <div class="font-medium text-[16px] text-black/60 leading-normal tracking-[-0.16px] fade-in" style="animation-delay: 3.2s;">
+        <a href="jobs/general-application.html" class="underline block mb-0"><span class="job-square square-general"></span>General application</a>
+        <p class="mb-0">&nbsp;</p>
+        <a href="jobs/frontend-engineer.html" class="underline block mb-0"><span class="job-square square-frontend"></span>Frontend engineer</a>
+        <p class="mb-0">&nbsp;</p>
+        <a href="jobs/backend-engineer.html" class="underline block mb-0"><span class="job-square square-backend"></span>Backend engineer</a>
+        <p class="mb-0">&nbsp;</p>
+        <a href="jobs/smart-contract-engineer.html" class="underline block"><span class="job-square square-smart-contract"></span>Smart contract engineer</a>
+      </div>
     </div>
 
     <!-- Footer Links -->
