@@ -44,6 +44,10 @@ a:visited {
   color: #180976;
 }
 
+a:hover {
+  color: black;
+}
+
 /* Code blocks */
 code,
 .code {

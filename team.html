@@ -6,34 +6,87 @@
   <link rel="icon" href="images/favicon.ico">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="whetstone research" />
-
   <title>gm</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @font-face {
+      font-family: 'Signifier Medium';
+      src: url('fonts/Signifier-Medium.otf') format('opentype');
+      font-weight: 500;
+      font-style: normal;
+    }
 
-  <link rel="stylesheet" href="styles.css" />
+    a:hover {
+      color: black !important;
+    }
+
+    /* Team member colored squares */
+    .team-square {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      margin-right: 8px;
+      vertical-align: middle;
+      transform: translateY(-2px);
+    }
+    
+    .square-austin { background-color: #ff4500; }
+    .square-matt { background-color: #00ff00; }
+    .square-clement { background-color: #000000; }
+    .square-cooper { background-color: #ff1493; }
+  </style>
   <script defer src="https://cloud.umami.is/script.js" data-website-id="435b33ab-c4e3-4b5a-aec5-6cbf5311c08c"></script>
 </head>
 
 <body>
-  <div id="preamble">
-    <h1 class="title">Whetstone Research</h1>
-  </div>
+  <div class="bg-[#cccccc] min-h-screen font-sans">
+    <!-- Sticky Header -->
+    <div class="sticky top-0 z-10 py-[49.5px]">
+      <div class="flex justify-between items-center px-[4.16667%]">
+        <div class="flex items-center gap-8">
+          <p class="font-medium text-[16px] text-black whitespace-pre" style="font-family: 'Signifier Medium', serif;">Whetstone Research</p>
+          <p class="font-medium text-[16px] text-black/60 whitespace-pre">
+            <a href="index.html" class="underline decoration-dotted">Back</a>
+          </p>
+        </div>
+      </div>
+    </div>
 
-  <div>
-    <h2 class="subtitle" style="margin-top: 35px; font-size: large; text-align: left;"> About us
-  </div>
-  <h3 class="text">Austin Adams (Former Protocols at Uniswap) - <a href="https://aada.ms">Website</a>, <a
-      href="https://x.com/austinadams10">X</a> and <a href="https://github.com/aadams">GitHub</a></h3>
-  <h3 class="text">Matt Czernik (Former Protocols at Primitive) - <a href="https://x.com/kinrezc">X</a> and <a
-      href="https://github.com/kinrezC">GitHub</a></h3>
-  <h3 class="text">Clement Lakhal (Former Protocols at Primitive) - <a href="https://x.com/clemlak">X</a> and <a
-      href="https://github.com/clemlak">GitHub</a></h3>
-  <h3 class="text">Cooper Kunz (Former Product at Aztec) - <a href="https://x.com/cooper_kunz">X</a> and <a
-    href="https://github.com/cooper-kunz">GitHub</a></h3>
-  <h3 class="text">Others</h3>
+    <!-- Main Content -->
+    <div class="px-[4.16667%] pb-[120px]">
+      <div class="font-medium text-[16px] text-black w-[440px] leading-normal tracking-[-0.16px]">
+        <h2 class="text-[20px] font-medium mb-6">Team</h2>
+        
+        <h3 class="text-[18px] font-medium mb-4 mt-8">About us</h3>
+        <p class="mb-1 text-black/60"><span class="team-square square-austin"></span>Austin Adams (Former Protocols at Uniswap)</p>
+        <p class="mb-6 text-black/60 ml-4"><a href="https://aada.ms" class="underline" target="_blank">Website</a>, <a href="https://x.com/austinadams10" class="underline" target="_blank">X</a> and <a href="https://github.com/aadams" class="underline" target="_blank">GitHub</a></p>
+        
+        <p class="mb-1 text-black/60"><span class="team-square square-matt"></span>Matt Czernik (Former Protocols at Primitive)</p>
+        <p class="mb-6 text-black/60 ml-4"><a href="https://x.com/kinrezc" class="underline" target="_blank">X</a> and <a href="https://github.com/kinrezC" class="underline" target="_blank">GitHub</a></p>
+        
+        <p class="mb-1 text-black/60"><span class="team-square square-clement"></span>Clement Lakhal (Former Protocols at Primitive)</p>
+        <p class="mb-6 text-black/60 ml-4"><a href="https://x.com/clemlak" class="underline" target="_blank">X</a> and <a href="https://github.com/clemlak" class="underline" target="_blank">GitHub</a></p>
+        
+        <p class="mb-1 text-black/60"><span class="team-square square-cooper"></span>Cooper Kunz (Former Product at Aztec)</p>
+        <p class="mb-6 text-black/60 ml-4"><a href="https://x.com/cooper_kunz" class="underline" target="_blank">X</a> and <a href="https://github.com/cooper-kunz" class="underline" target="_blank">GitHub</a></p>
+        
+        <p class="text-black/60">Others</p>
+      </div>
+    </div>
 
-  <a href="index.html">Back</a>
+    <!-- Footer Links (matching homepage) -->
+    <div class="fixed font-medium text-[16px] text-black/60 left-[4.16667%] bottom-[49.5px] z-10">
+      <p class="underline decoration-dotted whitespace-pre"><a href="mailto:contact@whetstone.cc">Email</a></p>
+    </div>
+    
+    <div class="fixed font-medium text-[16px] text-black/60 left-1/2 transform -translate-x-1/2 bottom-[49.5px] z-10">
+      <p class="underline decoration-dotted whitespace-pre"><a href="https://x.com/whetstonedotcc" target="_blank">Twitter</a></p>
+    </div>
+    
+    <div class="fixed font-medium text-[16px] text-black/60 right-[4.16667%] bottom-[49.5px] z-10">
+      <p class="underline decoration-dotted whitespace-pre"><a href="https://paragraph.xyz/@whetstone" target="_blank">Blog</a></p>
+    </div>
   </div>
-
 </body>
 
 </html>
