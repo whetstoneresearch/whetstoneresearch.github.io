@@ -163,8 +163,23 @@
       }
     }
     
-    /* Hide ASCII art on smaller screens to prevent content squishing */
+    /* Scale ASCII art progressively instead of hiding */
     @media (max-width: 1200px) {
+      .mobile-ascii-adjust {
+        transform: scale(0.8);
+        transform-origin: top right;
+      }
+    }
+    
+    @media (max-width: 1000px) {
+      .mobile-ascii-adjust {
+        transform: scale(0.65);
+        transform-origin: top right;
+      }
+    }
+    
+    /* Hide ASCII art on smaller screens */
+    @media (max-width: 850px) {
       .mobile-ascii-adjust {
         display: none !important;
       }
@@ -193,8 +208,23 @@
       max-width: 440px !important; /* Maintain original content width */
     }
     
-    /* Remove content width constraint when ASCII art is hidden */
+    /* Adjust content width as ASCII art scales down */
     @media (max-width: 1200px) {
+      .content-width-constrained {
+        right: calc(4.16667% + 445px + 1.6rem) !important; /* Scaled ASCII (80%) */
+        max-width: 448px !important;
+      }
+    }
+    
+    @media (max-width: 1000px) {
+      .content-width-constrained {
+        right: calc(4.16667% + 361px + 1.3rem) !important; /* Scaled ASCII (65%) */
+        max-width: 448px !important;
+      }
+    }
+    
+    /* Remove content width constraint when ASCII art is hidden */
+    @media (max-width: 850px) {
       .content-width-constrained {
         right: 4.16667% !important; /* Match header/footer when no ASCII art */
         max-width: 448px !important; /* Constrained width for better readability */
