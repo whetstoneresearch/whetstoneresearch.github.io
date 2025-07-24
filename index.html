@@ -163,6 +163,11 @@
       }
     }
     
+    /* Footer positioning - ensure footer appears above everything */
+    .footer-link {
+      z-index: 9999;
+    }
+    
     /* Scale ASCII art progressively instead of hiding */
     @media (max-width: 1200px) {
       .mobile-ascii-adjust {
@@ -325,15 +330,15 @@
     </div>
 
     <!-- Footer Links -->
-    <div class="absolute font-medium text-[16px] text-black/60 left-[4.16667%] bottom-[49.5px] fade-in" style="animation-delay: 3.5s;">
+    <div class="absolute font-medium text-[16px] text-black/60 left-[4.16667%] bottom-[49.5px] fade-in footer-link" style="animation-delay: 3.5s;">
       <p class="underline decoration-dotted whitespace-pre"><a href="mailto:contact@whetstone.cc">Email</a></p>
     </div>
     
-    <div class="absolute font-medium text-[16px] text-black/60 left-1/2 transform -translate-x-1/2 bottom-[49.5px] fade-in" style="animation-delay: 3.6s;">
+    <div class="absolute font-medium text-[16px] text-black/60 left-1/2 transform -translate-x-1/2 bottom-[49.5px] fade-in footer-link" style="animation-delay: 3.6s;">
       <p class="underline decoration-dotted whitespace-pre"><a href="https://x.com/whetstonedotcc" target="_blank">Twitter</a></p>
     </div>
     
-    <div class="absolute font-medium text-[16px] text-black/60 right-[4.16667%] bottom-[49.5px] fade-in" style="animation-delay: 3.7s;">
+    <div class="absolute font-medium text-[16px] text-black/60 right-[4.16667%] bottom-[49.5px] fade-in footer-link" style="animation-delay: 3.7s;">
       <p class="underline decoration-dotted whitespace-pre"><a href="https://paragraph.xyz/@whetstone" target="_blank">Blog</a></p>
     </div>
 
