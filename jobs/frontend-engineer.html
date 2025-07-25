@@ -78,6 +78,26 @@
       box-shadow: 0 0 4px rgba(79, 70, 229, 0.4);
       border-radius: 1px;
     }
+
+    /* Job title click interaction */
+    .job-title {
+      cursor: pointer;
+      transition: all 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+
+    .job-title:hover {
+      transform: translateY(-2px);
+    }
+
+    /* Background transition for page */
+    body > div {
+      transition: background-color 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+
+    /* Dot color transitions */
+    .job-square {
+      transition: background-color 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
   </style>
   <script defer src="https://cloud.umami.is/script.js" data-website-id="435b33ab-c4e3-4b5a-aec5-6cbf5311c08c"></script>
 </head>
@@ -99,7 +119,7 @@
     <!-- Main Content -->
     <div class="px-[4.16667%] pb-[120px]">
       <div class="font-medium text-[16px] text-black w-full md:w-[440px] leading-normal tracking-[-0.16px]">
-        <h2 class="text-[20px] font-medium mb-6"><span class="job-square square-frontend"></span>Frontend Engineer</h2>
+        <h2 class="text-[20px] font-medium mb-6 job-title" onclick="toggleJobTheme()"><span class="job-square square-frontend"></span>Frontend Engineer</h2>
         
         <h3 class="text-[18px] font-medium mb-4 mt-8">About Whetstone Research</h3>
         <p class="mb-6 text-black/60">Whetstone Research is focused on designing and building new protocols that accelerate the future of onchain markets. The team is less than 10 people with deep hands on experience in the blockchain industry; previously at Uniswap, Primitive, Aztec, and numerous others. We are working on <a href="https://doppler.lol/" class="underline" target="_blank">Doppler</a>, a hyper-efficient price discovery and liquidity bootstrapping Protocol built on the EVM, used by Zora and others. Learn more about Whetstone on <a href="https://whetstone.cc/" class="underline" target="_blank">our website</a> or read our <a href="https://paragraph.xyz/@whetstone" class="underline" target="_blank">blog</a>.</p>
@@ -239,6 +259,45 @@
     // Optional: Disable trail on mobile devices to save performance
     if (window.innerWidth <= 768) {
       document.removeEventListener('mousemove', arguments.callee);
+    }
+
+    // Job theme toggle functionality
+    let isThemeToggled = false;
+    const originalBg = '#cccccc';
+    const jobColor = '#0066ff'; // Frontend engineer blue
+
+    function toggleJobTheme() {
+      const pageContainer = document.querySelector('body > div');
+      const jobSquare = document.querySelector('.job-square');
+      
+      if (!isThemeToggled) {
+        // Switch to job color background
+        pageContainer.style.backgroundColor = jobColor;
+        
+        // Calculate contrast and set dot color
+        const contrastColor = getContrastColor(jobColor);
+        jobSquare.style.backgroundColor = contrastColor;
+        
+        isThemeToggled = true;
+      } else {
+        // Switch back to original
+        pageContainer.style.backgroundColor = originalBg;
+        jobSquare.style.backgroundColor = jobColor;
+        isThemeToggled = false;
+      }
+    }
+
+    function getContrastColor(hexcolor) {
+      // Convert hex to RGB
+      const r = parseInt(hexcolor.substr(1,2),16);
+      const g = parseInt(hexcolor.substr(3,2),16);
+      const b = parseInt(hexcolor.substr(5,2),16);
+      
+      // Calculate relative luminance using WCAG formula
+      const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+      
+      // Return black for light colors, white for dark colors
+      return luminance > 0.5 ? '#000000' : '#ffffff';
     }
   </script>
 </body>
