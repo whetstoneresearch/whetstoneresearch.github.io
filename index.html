@@ -286,12 +286,18 @@
       margin-right: 8px;
       vertical-align: middle;
       transform: translateY(-2px);
+      transition: transform 0.6s ease;
     }
     
     .square-general { background-color: #ff0000; }
     .square-frontend { background-color: #0066ff; }
     .square-backend { background-color: #ffff00; }
     .square-smart-contract { background-color: #ff0099; }
+
+    /* Job link hover effects */
+    a:hover .job-square {
+      transform: translateY(-2px) rotate(180deg);
+    }
 
     /* Global link hover effect */
     a:hover {

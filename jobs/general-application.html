@@ -16,6 +16,24 @@
       font-style: normal;
     }
 
+    /* Job role colored squares */
+    .job-square {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      margin-right: 8px;
+      vertical-align: middle;
+      transform: translateY(-2px);
+      transition: transform 0.6s ease;
+    }
+    
+    .square-general { background-color: #ff0000; }
+
+    /* Job title hover effects */
+    h2:hover .job-square {
+      transform: translateY(-2px) rotate(180deg);
+    }
+
     a:hover {
       color: black !important;
     }
@@ -40,7 +58,7 @@
     <!-- Main Content -->
     <div class="px-[4.16667%] pb-[120px]">
       <div class="font-medium text-[16px] text-black w-full md:w-[440px] leading-normal tracking-[-0.16px]">
-        <h2 class="text-[20px] font-medium mb-6">General Application</h2>
+        <h2 class="text-[20px] font-medium mb-6"><span class="job-square square-general"></span>General Application</h2>
         
         <h3 class="text-[18px] font-medium mb-4 mt-8">About Whetstone Research</h3>
         <p class="mb-6 text-black/60">Whetstone Research is focused on designing and building new protocols that accelerate the future of onchain markets. The team is less than 10 people with deep hands on experience in the blockchain industry; previously at Uniswap, Primitive, Aztec, and numerous others. We are working on <a href="https://doppler.lol/" class="underline" target="_blank">Doppler</a>, a hyper-efficient price discovery and liquidity bootstrapping Protocol built on the EVM, used by Zora and others. Learn more about Whetstone on <a href="https://whetstone.cc/" class="underline" target="_blank">our website</a> or read our <a href="https://paragraph.xyz/@whetstone" class="underline" target="_blank">blog</a>.</p>
