@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <link rel="icon" href="images/favicon.ico">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="description" content="whetstone research" />
   <title>gm</title>
   <script src="https://cdn.tailwindcss.com"></script>
@@ -242,7 +242,7 @@
       }
     }
     
-    @media (max-width: 768px) {
+    @media (max-width: 768px) and (orientation: portrait) {
       .main-content-container {
         right: 4.16667%; /* Match header/footer on mobile */
         max-width: none; /* Allow full width on mobile */
@@ -250,24 +250,40 @@
         gap: 32px; /* Slightly larger gap on mobile */
       }
       
-      /* Ensure footer appears below content on mobile */
+      /* Ensure footer appears below content on mobile portrait only */
       .bg-container {
         min-height: calc(100vh + 100px); /* Reduced extra height */
         padding-bottom: 80px; /* Reduced bottom padding */
       }
     }
+
+    @media (max-width: 768px) and (orientation: landscape) {
+      .main-content-container {
+        right: 4.16667%; /* Match header/footer on mobile */
+        max-width: none; /* Allow full width on mobile */
+        top: 160px; /* Closer to desktop position on mobile */
+        gap: 32px; /* Slightly larger gap on mobile */
+      }
+    }
     
     /* For very small screens */
-    @media (max-width: 480px) {
+    @media (max-width: 480px) and (orientation: portrait) {
       .main-content-container {
         top: 180px; /* Slightly more space for very small screens */
         gap: 36px; /* Moderate gap for very small screens */
       }
       
-      /* Ensure footer appears below content on mobile */
+      /* Ensure footer appears below content on mobile portrait only */
       .bg-container {
         min-height: calc(100vh + 120px); /* Moderate extra height */
         padding-bottom: 100px; /* Moderate bottom padding */
+      }
+    }
+
+    @media (max-width: 480px) and (orientation: landscape) {
+      .main-content-container {
+        top: 180px; /* Slightly more space for very small screens */
+        gap: 36px; /* Moderate gap for very small screens */
       }
     }
 
@@ -276,6 +292,13 @@
       font-size: 0.75em;
       vertical-align: top;
       margin-left: 2px;
+    }
+
+    /* Add bottom padding only in landscape mode for job links */
+    @media (orientation: landscape) and (max-width: 1023px) {
+      .job-links-container {
+        padding-bottom: 80px;
+      }
     }
 
     /* Job role colored squares */
@@ -384,7 +407,7 @@
       </div>
 
       <!-- Job Links -->
-      <div class="font-medium text-[16px] text-black/60 leading-normal tracking-[-0.16px] fade-in" style="animation-delay: 3.2s;">
+      <div class="font-medium text-[16px] text-black/60 leading-normal tracking-[-0.16px] fade-in job-links-container" style="animation-delay: 3.2s;">
         <a href="jobs/general-application.html" class="underline block mb-0"><span class="job-square square-general"></span>General application</a>
         <p class="mb-0">&nbsp;</p>
         <a href="jobs/frontend-engineer.html" class="underline block mb-0"><span class="job-square square-frontend"></span>Frontend engineer</a>
