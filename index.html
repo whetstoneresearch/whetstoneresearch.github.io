@@ -318,8 +318,30 @@
     .square-smart-contract { background-color: #ff0099; }
 
     /* Job link hover effects */
-    a:hover .job-square {
+    .job-link {
+      position: relative;
+      transition: background-color 0.2s ease;
+    }
+    
+    .job-link:hover {
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+    
+    .job-link:hover .job-square {
       transform: translateY(-2px) rotate(180deg);
+    }
+    
+    .job-link .hover-arrow {
+      position: absolute;
+      right: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+    
+    .job-link:hover .hover-arrow {
+      opacity: 0.4;
     }
 
     /* Global link hover effect */
@@ -408,13 +430,10 @@
 
       <!-- Job Links -->
       <div class="font-medium text-[16px] text-black/60 leading-normal tracking-[-0.16px] fade-in job-links-container" style="animation-delay: 3.2s;">
-        <a href="jobs/general-application.html" class="underline block mb-0"><span class="job-square square-general"></span>General application</a>
-        <p class="mb-0">&nbsp;</p>
-        <a href="jobs/frontend-engineer.html" class="underline block mb-0"><span class="job-square square-frontend"></span>Frontend engineer</a>
-        <p class="mb-0">&nbsp;</p>
-        <a href="jobs/backend-engineer.html" class="underline block mb-0"><span class="job-square square-backend"></span>Backend engineer</a>
-        <p class="mb-0">&nbsp;</p>
-        <a href="jobs/smart-contract-engineer.html" class="underline block"><span class="job-square square-smart-contract"></span>Smart contract engineer</a>
+        <a href="jobs/general-application.html" class="job-link block py-4" style="border-bottom: 1px solid rgba(0, 0, 0, 0.05); width: 100%;"><span class="job-square square-general"></span>General application<span class="hover-arrow">→</span></a>
+        <a href="jobs/frontend-engineer.html" class="job-link block py-4" style="border-bottom: 1px solid rgba(0, 0, 0, 0.05); width: 100%;"><span class="job-square square-frontend"></span>Frontend engineer<span class="hover-arrow">→</span></a>
+        <a href="jobs/backend-engineer.html" class="job-link block py-4" style="border-bottom: 1px solid rgba(0, 0, 0, 0.05); width: 100%;"><span class="job-square square-backend"></span>Backend engineer<span class="hover-arrow">→</span></a>
+        <a href="jobs/smart-contract-engineer.html" class="job-link block py-4" style="border-bottom: 1px solid rgba(0, 0, 0, 0.05); width: 100%;"><span class="job-square square-smart-contract"></span>Smart contract engineer<span class="hover-arrow">→</span></a>
       </div>
     </div>
 
