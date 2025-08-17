@@ -16,6 +16,19 @@
       font-style: normal;
     }
 
+    /* Dark theme styles */
+    :root {
+      --bg-primary: #cccccc;
+      --text-primary: #000000;
+      --text-secondary: rgba(0, 0, 0, 0.6);
+    }
+
+    [data-theme="dark"] {
+      --bg-primary: #000000;
+      --text-primary: #ffffff;
+      --text-secondary: rgba(255, 255, 255, 0.6);
+    }
+
     /* Job role colored squares */
     .job-square {
       display: inline-block;
@@ -35,7 +48,7 @@
     }
 
     a:hover {
-      color: black !important;
+      color: var(--text-primary) !important;
     }
 
     /* Cursor trail effect */
@@ -79,37 +92,19 @@
       border-radius: 1px;
     }
 
-    /* Job title click interaction */
-    .job-title {
-      cursor: pointer;
-      transition: all 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
-    }
-
-    .job-title:hover {
-      transform: translateY(-2px);
-    }
-
-    /* Background transition for page */
-    body > div {
-      transition: background-color 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
-    }
-
-    /* Dot color transitions */
-    .job-square {
-      transition: background-color 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
-    }
   </style>
   <script defer src="https://cloud.umami.is/script.js" data-website-id="435b33ab-c4e3-4b5a-aec5-6cbf5311c08c"></script>
 </head>
 
 <body>
-  <div class="bg-[#cccccc] min-h-screen font-sans">
+  <div class="min-h-screen font-sans" style="background-color: var(--bg-primary); transition: background-color 0.3s ease;">
+    
     <!-- Sticky Header -->
     <div class="sticky top-0 z-10 pt-[25.5px] pb-[49.5px]">
       <div class="flex justify-between items-center px-[4.16667%]">
         <div class="flex items-center gap-8">
-          <p class="font-medium text-[16px] text-black whitespace-pre" style="font-family: 'Signifier Medium', serif;">Whetstone Research</p>
-                     <p class="font-medium text-[16px] text-black/50 whitespace-pre">
+          <p class="font-medium text-[16px] whitespace-pre" style="font-family: 'Signifier Medium', serif; color: var(--text-primary);">Whetstone Research</p>
+                     <p class="font-medium text-[16px] whitespace-pre" style="color: var(--text-secondary);">
              <a href="../index.html" class="underline decoration-dotted">Back</a>
            </p>
         </div>
@@ -118,41 +113,41 @@
 
     <!-- Main Content -->
     <div class="px-[4.16667%] pb-[120px]">
-      <div class="font-medium text-[16px] text-black w-full md:w-[440px] leading-normal tracking-[-0.16px]">
-        <h2 class="text-[20px] font-medium mb-6 job-title" onclick="toggleJobTheme()"><span class="job-square square-frontend"></span>Frontend Engineer</h2>
+      <div class="font-medium text-[16px] w-full md:w-[440px] leading-normal tracking-[-0.16px]" style="color: var(--text-primary);">
+        <h2 class="text-[20px] font-medium mb-6"><span class="job-square square-frontend"></span>Frontend Engineer</h2>
         
         <h3 class="text-[18px] font-medium mb-4 mt-8">About Whetstone Research</h3>
-        <p class="mb-6 text-black/60">Whetstone Research is focused on designing and building new protocols that accelerate the future of onchain markets. The team is less than 10 people with deep hands on experience in the blockchain industry; previously at Uniswap, Primitive, Aztec, and numerous others. We are working on <a href="https://doppler.lol/" class="underline" target="_blank">Doppler</a>, a hyper-efficient price discovery and liquidity bootstrapping Protocol built on the EVM, used by Zora and others. Learn more about Whetstone on <a href="https://whetstone.cc/" class="underline" target="_blank">our website</a> or read our <a href="https://paragraph.xyz/@whetstone" class="underline" target="_blank">blog</a>.</p>
+        <p class="mb-6" style="color: var(--text-secondary);">Whetstone Research is focused on designing and building new protocols that accelerate the future of onchain markets. The team is less than 10 people with deep hands on experience in the blockchain industry; previously at Uniswap, Primitive, Aztec, and numerous others. We are working on <a href="https://doppler.lol/" class="underline" target="_blank">Doppler</a>, a hyper-efficient price discovery and liquidity bootstrapping Protocol built on the EVM, used by Zora and others. Learn more about Whetstone on <a href="https://whetstone.cc/" class="underline" target="_blank">our website</a> or read our <a href="https://paragraph.xyz/@whetstone" class="underline" target="_blank">blog</a>.</p>
         
         <h3 class="text-[18px] font-medium mb-4 mt-8">About the role</h3>
-        <p class="mb-6 text-black/60">This role is going to be working on <a href="https://pure.st/" class="underline" target="_blank">Pure Markets</a>.</p>
+        <p class="mb-6" style="color: var(--text-secondary);">This role is going to be working on <a href="https://pure.st/" class="underline" target="_blank">Pure Markets</a>.</p>
         
         <h3 class="text-[18px] font-medium mb-4 mt-8">Location</h3>
-        <p class="mb-6 text-black/60">Whetstone Research is remote-friendly. Timezones overlapping with EST are preferred.</p>
+        <p class="mb-6" style="color: var(--text-secondary);">Whetstone Research is remote-friendly. Timezones overlapping with EST are preferred.</p>
         
         <h3 class="text-[18px] font-medium mb-4 mt-8">Responsibilities</h3>
-        <p class="mb-2 text-black/60">Implementing - new UI features and improved designs</p>
-        <p class="mb-2 text-black/60">Testing - automate UI testing alongside a release pipeline</p>
-        <p class="mb-6 text-black/60">Shipping - overseeing successful production releases</p>
+        <p class="mb-2" style="color: var(--text-secondary);">Implementing - new UI features and improved designs</p>
+        <p class="mb-2" style="color: var(--text-secondary);">Testing - automate UI testing alongside a release pipeline</p>
+        <p class="mb-6" style="color: var(--text-secondary);">Shipping - overseeing successful production releases</p>
         
         <h3 class="text-[18px] font-medium mb-4 mt-8">What we're looking for</h3>
-        <p class="mb-6 text-black/60">Hopefully you're obsessed with implementing high quality user experiences and interfaces. Ideally you're product minded and have a deep amount of respect for users. You love the blockchain industry and everything that entails, including an understanding of why non-custodial UX is what it is. You enjoy quickly testing out and iterating on a product until finding something that converts to real, tangible outcomes. You work well as part of a team, know when to ask for help, and lean on your colleagues in a remote environment to ensure we are continuously releasing improvements. You have experience delivering highly reliable and modern interfaces to millions of users.</p>
+        <p class="mb-6" style="color: var(--text-secondary);">Hopefully you're obsessed with implementing high quality user experiences and interfaces. Ideally you're product minded and have a deep amount of respect for users. You love the blockchain industry and everything that entails, including an understanding of why non-custodial UX is what it is. You enjoy quickly testing out and iterating on a product until finding something that converts to real, tangible outcomes. You work well as part of a team, know when to ask for help, and lean on your colleagues in a remote environment to ensure we are continuously releasing improvements. You have experience delivering highly reliable and modern interfaces to millions of users.</p>
         
-        <p class="mb-2 text-black/60">If this sounds like you, please get in touch. Email resumes to hiring @ whetstone.cc</p>
-        <p class="text-black/60">Let's build the future of onchain markets together.</p>
+        <p class="mb-2" style="color: var(--text-secondary);">If this sounds like you, please get in touch. Email resumes to hiring @ whetstone.cc</p>
+        <p style="color: var(--text-secondary);">Let's build the future of onchain markets together.</p>
       </div>
     </div>
 
     <!-- Footer Links (matching homepage) -->
-    <div class="fixed font-medium text-[16px] text-black/50 left-[4.16667%] bottom-[49.5px] z-10">
+    <div class="fixed font-medium text-[16px] left-[4.16667%] bottom-[49.5px] z-10" style="color: var(--text-secondary);">
       <p class="underline decoration-dotted whitespace-pre"><a href="mailto:contact@whetstone.cc">Email</a></p>
     </div>
     
-    <div class="fixed font-medium text-[16px] text-black/50 left-1/2 transform -translate-x-1/2 bottom-[49.5px] z-10">
+    <div class="fixed font-medium text-[16px] left-1/2 transform -translate-x-1/2 bottom-[49.5px] z-10" style="color: var(--text-secondary);">
       <p class="underline decoration-dotted whitespace-pre"><a href="https://x.com/whetstonedotcc" target="_blank">Twitter</a></p>
     </div>
     
-    <div class="fixed font-medium text-[16px] text-black/50 right-[4.16667%] bottom-[49.5px] z-10">
+    <div class="fixed font-medium text-[16px] right-[4.16667%] bottom-[49.5px] z-10" style="color: var(--text-secondary);">
       <p class="underline decoration-dotted whitespace-pre"><a href="https://paragraph.xyz/@whetstone" target="_blank">Blog</a></p>
     </div>
   </div>
@@ -261,44 +256,11 @@
       document.removeEventListener('mousemove', arguments.callee);
     }
 
-    // Job theme toggle functionality
-    let isThemeToggled = false;
-    const originalBg = '#cccccc';
-    const jobColor = '#0066ff'; // Frontend engineer blue
-
-    function toggleJobTheme() {
-      const pageContainer = document.querySelector('body > div');
-      const jobSquare = document.querySelector('.job-square');
-      
-      if (!isThemeToggled) {
-        // Switch to job color background
-        pageContainer.style.backgroundColor = jobColor;
-        
-        // Calculate contrast and set dot color
-        const contrastColor = getContrastColor(jobColor);
-        jobSquare.style.backgroundColor = contrastColor;
-        
-        isThemeToggled = true;
-      } else {
-        // Switch back to original
-        pageContainer.style.backgroundColor = originalBg;
-        jobSquare.style.backgroundColor = jobColor;
-        isThemeToggled = false;
-      }
-    }
-
-    function getContrastColor(hexcolor) {
-      // Convert hex to RGB
-      const r = parseInt(hexcolor.substr(1,2),16);
-      const g = parseInt(hexcolor.substr(3,2),16);
-      const b = parseInt(hexcolor.substr(5,2),16);
-      
-      // Calculate relative luminance using WCAG formula
-      const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
-      
-      // Return black for light colors, white for dark colors
-      return luminance > 0.5 ? '#000000' : '#ffffff';
-    }
+    // Load saved theme on page load
+    document.addEventListener('DOMContentLoaded', () => {
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    });
   </script>
 </body>
 

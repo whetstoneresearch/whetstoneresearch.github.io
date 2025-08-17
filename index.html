@@ -58,8 +58,9 @@
       letter-spacing: 0;
       white-space: pre;
       font-size: 12px;
-      color: #333;
+      color: var(--ascii-color);
       position: relative;
+      transition: color 0.3s ease;
     }
     
     .ascii-char {
@@ -111,7 +112,7 @@
     
     @keyframes random-pulse {
       0%, 85%, 100% {
-        color: #333;
+        color: var(--ascii-color);
         text-shadow: none;
         opacity: 1;
       }
@@ -191,6 +192,27 @@
       }
     }
     
+    /* Dark theme styles */
+    :root {
+      --bg-primary: #cccccc;
+      --bg-secondary: #DCDCDC;
+      --text-primary: #000000;
+      --text-secondary: rgba(0, 0, 0, 0.6);
+      --border-color: rgba(0, 0, 0, 0.05);
+      --hover-bg: rgba(0, 0, 0, 0.05);
+      --ascii-color: #333;
+    }
+    
+    [data-theme="dark"] {
+      --bg-primary: #000000;
+      --bg-secondary: #111111;
+      --text-primary: #ffffff;
+      --text-secondary: rgba(255, 255, 255, 0.6);
+      --border-color: rgba(255, 255, 255, 0.1);
+      --hover-bg: rgba(255, 255, 255, 0.05);
+      --ascii-color: #cccccc;
+    }
+    
     /* Ensure background always fills viewport */
     html, body {
       margin: 0;
@@ -198,13 +220,15 @@
       width: 100%;
       height: 100%;
       min-height: 100vh;
-      background-color: #cccccc;
+      background-color: var(--bg-primary);
     }
     
     .bg-container {
       min-height: 100vh;
       min-height: 100dvh; /* Use dynamic viewport height for mobile */
       width: 100%;
+      background-color: var(--bg-primary);
+      transition: background-color 0.3s ease;
     }
     
     /* Content width constraints to match header/footer */
@@ -321,10 +345,11 @@
     .job-link {
       position: relative;
       transition: background-color 0.2s ease;
+      border-bottom: 1px solid var(--border-color);
     }
     
     .job-link:hover {
-      background-color: rgba(0, 0, 0, 0.05);
+      background-color: var(--hover-bg);
     }
     
     .job-link:hover .job-square {
@@ -346,7 +371,22 @@
 
     /* Global link hover effect */
     a:hover {
-      color: black !important;
+      color: var(--text-primary) !important;
+    }
+    
+    /* Theme toggle button */
+    .theme-toggle {
+      cursor: pointer;
+      background: transparent;
+      border: none;
+      font-size: 16px;
+      font-family: 'Signifier Medium', serif;
+      color: var(--text-secondary);
+      transition: color 0.3s ease;
+    }
+    
+    .theme-toggle:hover {
+      color: var(--text-primary);
     }
 
     /* Cursor trail effect */
@@ -394,26 +434,41 @@
 </head>
 
 <body>
-  <div class="bg-[#cccccc] bg-container relative w-full font-sans">
-    <!-- Welcome Header -->
-    <div class="absolute font-medium text-[16px] text-black left-[4.16667%] top-[49.5px] fade-in" style="animation-delay: 2s; font-family: 'Signifier Medium', serif;">
-      <p class="whitespace-pre">Whetstone Research</p>
-    </div>
-    
-    <!-- Team Link -->
-    <div class="absolute font-medium text-[16px] text-black/60 right-[4.16667%] top-[49.5px] fade-in" style="animation-delay: 3.4s;">
-      <p class="underline decoration-dotted whitespace-pre"><a href="team.html">Team</a></p>
+  <div class="bg-container relative w-full font-sans">
+    <!-- Header Container -->
+    <div class="absolute left-[4.16667%] right-[4.16667%] top-[49.5px] flex justify-between items-center">
+      <!-- Welcome Header and Theme Toggle (grouped on mobile) -->
+      <div class="flex items-center gap-4">
+        <div class="font-medium text-[16px] fade-in" style="animation-delay: 2s; font-family: 'Signifier Medium', serif; color: var(--text-primary);">
+          <p class="whitespace-pre">Whetstone Research</p>
+        </div>
+        
+        <!-- Theme Toggle (mobile position) -->
+        <button class="theme-toggle fade-in md:hidden" style="animation-delay: 2s;" onclick="toggleTheme()">
+          <span id="theme-icon-mobile">☾</span>
+        </button>
+      </div>
+      
+      <!-- Theme Toggle (desktop position) -->
+      <button class="theme-toggle fade-in hidden md:block" style="animation-delay: 2s;" onclick="toggleTheme()">
+        <span id="theme-icon-desktop">☾</span>
+      </button>
+      
+      <!-- Team Link -->
+      <div class="font-medium text-[16px] fade-in" style="animation-delay: 3.4s; color: var(--text-secondary);">
+        <p class="underline decoration-dotted whitespace-pre"><a href="team.html">Team</a></p>
+      </div>
     </div>
 
     <!-- Main Content Container -->
     <div class="main-content-container">
       <!-- Main Title -->
-      <div class="text-[36px] text-black leading-none tracking-[-0.36px] text-animate" style="font-family: 'Signifier Medium', serif;" id="main-title">
+      <div class="text-[36px] leading-none tracking-[-0.36px] text-animate" style="font-family: 'Signifier Medium', serif; color: var(--text-primary);" id="main-title">
         <p>We're building the future of onchain markets.</p>
       </div>
 
       <!-- Main Content -->
-      <div class="font-medium text-[16px] text-black/60 leading-normal tracking-[-0.16px] fade-in" style="animation-delay: 2.5s;">
+      <div class="font-medium text-[16px] leading-normal tracking-[-0.16px] fade-in" style="animation-delay: 2.5s; color: var(--text-secondary);">
         <p class="mb-0">
           Our first product is <a href="https://doppler.lol/" class="underline" target="_blank">Doppler<span class="external-arrow">&#8599;</span></a>, a hyper-efficient price discovery and liquidity bootstrapping Protocol built on the Uniswap ecosystem.
         </p>
@@ -424,35 +479,35 @@
       </div>
 
       <!-- Open Roles Section -->
-      <div class="font-medium text-[16px] text-black fade-in" style="animation-delay: 3s;">
+      <div class="font-medium text-[16px] fade-in" style="animation-delay: 3s; color: var(--text-primary);">
         <p class="whitespace-pre">Open roles</p>
       </div>
 
       <!-- Job Links -->
-      <div class="font-medium text-[16px] text-black/60 leading-normal tracking-[-0.16px] fade-in job-links-container" style="animation-delay: 3.2s;">
-        <a href="jobs/general-application.html" class="job-link block py-4" style="border-bottom: 1px solid rgba(0, 0, 0, 0.05); width: 100%;"><span class="job-square square-general"></span>General application<span class="hover-arrow">→</span></a>
-        <a href="jobs/frontend-engineer.html" class="job-link block py-4" style="border-bottom: 1px solid rgba(0, 0, 0, 0.05); width: 100%;"><span class="job-square square-frontend"></span>Frontend engineer<span class="hover-arrow">→</span></a>
-        <a href="jobs/backend-engineer.html" class="job-link block py-4" style="border-bottom: 1px solid rgba(0, 0, 0, 0.05); width: 100%;"><span class="job-square square-backend"></span>Backend engineer<span class="hover-arrow">→</span></a>
-        <a href="jobs/smart-contract-engineer.html" class="job-link block py-4" style="border-bottom: 1px solid rgba(0, 0, 0, 0.05); width: 100%;"><span class="job-square square-smart-contract"></span>Smart contract engineer<span class="hover-arrow">→</span></a>
+      <div class="font-medium text-[16px] leading-normal tracking-[-0.16px] job-links-container" style="color: var(--text-secondary);">
+        <a href="jobs/general-application.html" class="job-link block py-4 fade-in" style="width: 100%; animation-delay: 3.2s;"><span class="job-square square-general"></span>General application<span class="hover-arrow">→</span></a>
+        <a href="jobs/frontend-engineer.html" class="job-link block py-4 fade-in" style="width: 100%; animation-delay: 3.4s;"><span class="job-square square-frontend"></span>Frontend engineer<span class="hover-arrow">→</span></a>
+        <a href="jobs/backend-engineer.html" class="job-link block py-4 fade-in" style="width: 100%; animation-delay: 3.6s;"><span class="job-square square-backend"></span>Backend engineer<span class="hover-arrow">→</span></a>
+        <a href="jobs/smart-contract-engineer.html" class="job-link block py-4 fade-in" style="width: 100%; animation-delay: 3.8s;"><span class="job-square square-smart-contract"></span>Smart contract engineer<span class="hover-arrow">→</span></a>
       </div>
     </div>
 
     <!-- Footer Links -->
-    <div class="fixed font-medium text-[16px] text-black/60 left-[4.16667%] bottom-[49.5px] fade-in footer-link z-10" style="animation-delay: 3.5s;">
+    <div class="fixed font-medium text-[16px] left-[4.16667%] bottom-[49.5px] fade-in footer-link z-10" style="animation-delay: 3.5s; color: var(--text-secondary);">
       <p class="underline decoration-dotted whitespace-pre"><a href="mailto:contact@whetstone.cc">Email</a></p>
     </div>
     
-    <div class="fixed font-medium text-[16px] text-black/60 left-1/2 transform -translate-x-1/2 bottom-[49.5px] fade-in footer-link z-10" style="animation-delay: 3.6s;">
+    <div class="fixed font-medium text-[16px] left-1/2 transform -translate-x-1/2 bottom-[49.5px] fade-in footer-link z-10" style="animation-delay: 3.6s; color: var(--text-secondary);">
       <p class="underline decoration-dotted whitespace-pre"><a href="https://x.com/whetstonedotcc" target="_blank">Twitter</a></p>
     </div>
     
-    <div class="fixed font-medium text-[16px] text-black/60 right-[4.16667%] bottom-[49.5px] fade-in footer-link z-10" style="animation-delay: 3.7s;">
+    <div class="fixed font-medium text-[16px] right-[4.16667%] bottom-[49.5px] fade-in footer-link z-10" style="animation-delay: 3.7s; color: var(--text-secondary);">
       <p class="underline decoration-dotted whitespace-pre"><a href="https://paragraph.xyz/@whetstone" target="_blank">Blog</a></p>
     </div>
 
     <!-- ASCII Art Container -->
     <div class="absolute w-[556px] h-[556px] right-[4.16667%] overflow-hidden fade-in mobile-ascii-adjust" style="top: 120px; animation-delay: 2.2s;">
-      <div class="absolute bg-[#DCDCDC] w-full h-full"></div>
+      <div class="absolute w-full h-full" style="background-color: var(--bg-secondary);"></div>
       <div class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
         <div id="ascii-art" class="ascii-container"></div>
       </div>
@@ -694,6 +749,35 @@
     if (window.innerWidth <= 768) {
       document.removeEventListener('mousemove', arguments.callee);
     }
+    
+    // Theme toggle functionality
+    function toggleTheme() {
+      const html = document.documentElement;
+      const currentTheme = html.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      const themeIconMobile = document.getElementById('theme-icon-mobile');
+      const themeIconDesktop = document.getElementById('theme-icon-desktop');
+      
+      html.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      
+      // Update both icons
+      const iconContent = newTheme === 'dark' ? '☀' : '☾';
+      if (themeIconMobile) themeIconMobile.textContent = iconContent;
+      if (themeIconDesktop) themeIconDesktop.textContent = iconContent;
+    }
+    
+    // Load saved theme on page load
+    document.addEventListener('DOMContentLoaded', () => {
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      const themeIconMobile = document.getElementById('theme-icon-mobile');
+      const themeIconDesktop = document.getElementById('theme-icon-desktop');
+      
+      document.documentElement.setAttribute('data-theme', savedTheme);
+      const iconContent = savedTheme === 'dark' ? '☀' : '☾';
+      if (themeIconMobile) themeIconMobile.textContent = iconContent;
+      if (themeIconDesktop) themeIconDesktop.textContent = iconContent;
+    });
   </script>
 </body>
 

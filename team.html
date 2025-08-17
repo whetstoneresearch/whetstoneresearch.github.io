@@ -15,9 +15,26 @@
       font-weight: 500;
       font-style: normal;
     }
+    
+    /* Dark theme styles */
+    :root {
+      --bg-primary: #cccccc;
+      --text-primary: #000000;
+      --text-secondary: rgba(0, 0, 0, 0.6);
+    }
+    
+    [data-theme="dark"] {
+      --bg-primary: #000000;
+      --text-primary: #ffffff;
+      --text-secondary: rgba(255, 255, 255, 0.6);
+    }
+    
+    body {
+      transition: background-color 0.3s ease;
+    }
 
     a:hover {
-      color: black !important;
+      color: var(--text-primary) !important;
     }
 
     /* Team member colored squares */
@@ -32,7 +49,7 @@
     
     .square-austin { background-color: #ff4500; }
     .square-matt { background-color: #00ff00; }
-    .square-clement { background-color: #000000; }
+    .square-clement { background-color: #808080; } /* Changed from black to gray for visibility in dark mode */
     .square-cooper { background-color: #ff1493; }
 
     /* Cursor trail effect */
@@ -80,13 +97,13 @@
 </head>
 
 <body>
-  <div class="bg-[#cccccc] min-h-screen font-sans">
+  <div class="min-h-screen font-sans" style="background-color: var(--bg-primary);">
     <!-- Sticky Header -->
     <div class="sticky top-0 z-10 pt-[25.5px] pb-[49.5px]">
       <div class="flex justify-between items-center px-[4.16667%]">
         <div class="flex items-center gap-8">
-          <p class="font-medium text-[16px] text-black whitespace-pre" style="font-family: 'Signifier Medium', serif;">Whetstone Research</p>
-          <p class="font-medium text-[16px] text-black/60 whitespace-pre">
+          <p class="font-medium text-[16px] whitespace-pre" style="font-family: 'Signifier Medium', serif; color: var(--text-primary);">Whetstone Research</p>
+          <p class="font-medium text-[16px] whitespace-pre" style="color: var(--text-secondary);">
             <a href="index.html" class="underline decoration-dotted">Back</a>
           </p>
         </div>
@@ -95,36 +112,36 @@
 
     <!-- Main Content -->
     <div class="px-[4.16667%] pb-[120px]">
-      <div class="font-medium text-[16px] text-black w-full md:w-[440px] leading-normal tracking-[-0.16px]">
+      <div class="font-medium text-[16px] w-full md:w-[440px] leading-normal tracking-[-0.16px]" style="color: var(--text-primary);">
         <h2 class="text-[20px] font-medium mb-6">Team</h2>
         
         <h3 class="text-[18px] font-medium mb-4 mt-8">About us</h3>
-        <p class="mb-1 text-black/60"><span class="team-square square-austin"></span>Austin Adams (Former Protocols at Uniswap)</p>
-        <p class="mb-6 text-black/60 ml-4"><a href="https://aada.ms" class="underline" target="_blank">Website</a>, <a href="https://x.com/austinadams10" class="underline" target="_blank">X</a> and <a href="https://github.com/aadams" class="underline" target="_blank">GitHub</a></p>
+        <p class="mb-1" style="color: var(--text-secondary);"><span class="team-square square-austin"></span>Austin Adams (Former Protocols at Uniswap)</p>
+        <p class="mb-6 ml-4" style="color: var(--text-secondary);"><a href="https://aada.ms" class="underline" target="_blank">Website</a>, <a href="https://x.com/austinadams10" class="underline" target="_blank">X</a> and <a href="https://github.com/aadams" class="underline" target="_blank">GitHub</a></p>
         
-        <p class="mb-1 text-black/60"><span class="team-square square-matt"></span>Matt Czernik (Former Protocols at Primitive)</p>
-        <p class="mb-6 text-black/60 ml-4"><a href="https://x.com/kinrezc" class="underline" target="_blank">X</a> and <a href="https://github.com/kinrezC" class="underline" target="_blank">GitHub</a></p>
+        <p class="mb-1" style="color: var(--text-secondary);"><span class="team-square square-matt"></span>Matt Czernik (Former Protocols at Primitive)</p>
+        <p class="mb-6 ml-4" style="color: var(--text-secondary);"><a href="https://x.com/kinrezc" class="underline" target="_blank">X</a> and <a href="https://github.com/kinrezC" class="underline" target="_blank">GitHub</a></p>
         
-        <p class="mb-1 text-black/60"><span class="team-square square-clement"></span>Clement Lakhal (Former Protocols at Primitive)</p>
-        <p class="mb-6 text-black/60 ml-4"><a href="https://x.com/clemlak" class="underline" target="_blank">X</a> and <a href="https://github.com/clemlak" class="underline" target="_blank">GitHub</a></p>
+        <p class="mb-1" style="color: var(--text-secondary);"><span class="team-square square-clement"></span>Clement Lakhal (Former Protocols at Primitive)</p>
+        <p class="mb-6 ml-4" style="color: var(--text-secondary);"><a href="https://x.com/clemlak" class="underline" target="_blank">X</a> and <a href="https://github.com/clemlak" class="underline" target="_blank">GitHub</a></p>
         
-        <p class="mb-1 text-black/60"><span class="team-square square-cooper"></span>Cooper Kunz (Former Product at Aztec)</p>
-        <p class="mb-6 text-black/60 ml-4"><a href="https://x.com/cooper_kunz" class="underline" target="_blank">X</a> and <a href="https://github.com/cooper-kunz" class="underline" target="_blank">GitHub</a></p>
+        <p class="mb-1" style="color: var(--text-secondary);"><span class="team-square square-cooper"></span>Cooper Kunz (Former Product at Aztec)</p>
+        <p class="mb-6 ml-4" style="color: var(--text-secondary);"><a href="https://x.com/cooper_kunz" class="underline" target="_blank">X</a> and <a href="https://github.com/cooper-kunz" class="underline" target="_blank">GitHub</a></p>
         
-        <p class="text-black/60">Others</p>
+        <p style="color: var(--text-secondary);">Others</p>
       </div>
     </div>
 
     <!-- Footer Links (matching homepage) -->
-    <div class="fixed font-medium text-[16px] text-black/60 left-[4.16667%] bottom-[49.5px] z-10">
+    <div class="fixed font-medium text-[16px] left-[4.16667%] bottom-[49.5px] z-10" style="color: var(--text-secondary);">
       <p class="underline decoration-dotted whitespace-pre"><a href="mailto:contact@whetstone.cc">Email</a></p>
     </div>
     
-    <div class="fixed font-medium text-[16px] text-black/60 left-1/2 transform -translate-x-1/2 bottom-[49.5px] z-10">
+    <div class="fixed font-medium text-[16px] left-1/2 transform -translate-x-1/2 bottom-[49.5px] z-10" style="color: var(--text-secondary);">
       <p class="underline decoration-dotted whitespace-pre"><a href="https://x.com/whetstonedotcc" target="_blank">Twitter</a></p>
     </div>
     
-    <div class="fixed font-medium text-[16px] text-black/60 right-[4.16667%] bottom-[49.5px] z-10">
+    <div class="fixed font-medium text-[16px] right-[4.16667%] bottom-[49.5px] z-10" style="color: var(--text-secondary);">
       <p class="underline decoration-dotted whitespace-pre"><a href="https://paragraph.xyz/@whetstone" target="_blank">Blog</a></p>
     </div>
   </div>
@@ -232,6 +249,29 @@
     if (window.innerWidth <= 768) {
       document.removeEventListener('mousemove', arguments.callee);
     }
+    
+    // Theme toggle functionality
+    function toggleTheme() {
+      const html = document.documentElement;
+      const currentTheme = html.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      const themeIcon = document.getElementById('theme-icon');
+      
+      html.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      
+      // Update icon
+      themeIcon.textContent = newTheme === 'dark' ? '☀' : '☾';
+    }
+    
+    // Load saved theme on page load
+    document.addEventListener('DOMContentLoaded', () => {
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      const themeIcon = document.getElementById('theme-icon');
+      
+      document.documentElement.setAttribute('data-theme', savedTheme);
+      themeIcon.textContent = savedTheme === 'dark' ? '☀' : '☾';
+    });
   </script>
 </body>
 
